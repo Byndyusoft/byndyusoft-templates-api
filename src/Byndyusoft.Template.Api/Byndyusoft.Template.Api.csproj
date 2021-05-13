@@ -5,4 +5,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Byndyusoft.Logging" Version="1.0.3" />
+  </ItemGroup>
+
 </Project>
