@@ -32,6 +32,8 @@ namespace Byndyusoft.Template.Api
                 options.SubstituteApiVersionInUrl = true;
             });
 
+            services.AddHealthChecks();
+
             services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
             services.AddSwaggerGen();
 
@@ -66,6 +68,7 @@ namespace Byndyusoft.Template.Api
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHealthChecks("healthz");
             });
         }
     }
