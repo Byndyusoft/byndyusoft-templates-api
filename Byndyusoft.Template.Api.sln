@@ -5,7 +5,11 @@ VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Byndyusoft.Template.Api", "src\Byndyusoft.Template.Api\Byndyusoft.Template.Api.csproj", "{B4720449-2D71-4324-9C13-D5B8EBF1C3BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Byndyusoft.Template.Migrator", "src\Byndyusoft.Template.Migrator\Byndyusoft.Template.Migrator.csproj", "{9B7CE02E-153B-4222-8205-EEE09C1EFE42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Byndyusoft.Template.Migrator", "src\Byndyusoft.Template.Migrator\Byndyusoft.Template.Migrator.csproj", "{9B7CE02E-153B-4222-8205-EEE09C1EFE42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Byndyusoft.Template.Api.Client", "src\Byndyusoft.Template.Api.Client\Byndyusoft.Template.Api.Client.csproj", "{9394A857-9D59-4534-AA66-70D78249EF8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Byndyusoft.Template.Api.Shared", "src\Byndyusoft.Template.Api.Shared\Byndyusoft.Template.Api.Shared.csproj", "{3C35E3AB-52E8-4A5E-8300-F40A95B997F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{9B7CE02E-153B-4222-8205-EEE09C1EFE42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B7CE02E-153B-4222-8205-EEE09C1EFE42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B7CE02E-153B-4222-8205-EEE09C1EFE42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9394A857-9D59-4534-AA66-70D78249EF8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9394A857-9D59-4534-AA66-70D78249EF8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9394A857-9D59-4534-AA66-70D78249EF8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9394A857-9D59-4534-AA66-70D78249EF8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C35E3AB-52E8-4A5E-8300-F40A95B997F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C35E3AB-52E8-4A5E-8300-F40A95B997F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C35E3AB-52E8-4A5E-8300-F40A95B997F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C35E3AB-52E8-4A5E-8300-F40A95B997F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
