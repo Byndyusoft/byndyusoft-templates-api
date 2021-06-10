@@ -1,6 +1,7 @@
 namespace Byndyusoft.Template.Api
 {
     using System.Text.Json.Serialization;
+    using Extensions;
     using Installers;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
@@ -9,6 +10,7 @@ namespace Byndyusoft.Template.Api
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
     using Microsoft.Extensions.Options;
+    using Prometheus;
     using Swagger;
     using Swashbuckle.AspNetCore.SwaggerGen;
     using Swashbuckle.AspNetCore.SwaggerUI;
@@ -68,11 +70,13 @@ namespace Byndyusoft.Template.Api
 
             app.UseRouting();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-                endpoints.MapHealthChecks("healthz");
-            });
+            app
+                .UseHealthChecks("/healthz")
+                .UseMetricServer()
+                .UseRouting()
+                .UseRequestsMetrics()
+                .UseEndpoints(endpoints => endpoints.MapControllers());
+
         }
     }
 }
