@@ -1,6 +1,7 @@
 namespace Byndyusoft.Template.Api
 {
     using System.Text.Json.Serialization;
+    using Installers;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Mvc;
@@ -36,6 +37,8 @@ namespace Byndyusoft.Template.Api
 
             services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
             services.AddSwaggerGen();
+
+            services.AddApplicationServices();
 
             services.AddControllers(options =>
                     {
