@@ -14,4 +14,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Byndyusoft.Template.Api.Shared\Byndyusoft.Template.Api.Shared.csproj" />
+    <ProjectReference Include="..\Byndyusoft.Template.Domain\Byndyusoft.Template.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
