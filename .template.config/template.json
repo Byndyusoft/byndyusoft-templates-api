@@ -1,0 +1,17 @@
+{
+"$schema": "http://json.schemastore.org/template",
+  "author": "Byndyusoft",
+  "classifications": ["Web"],
+  "projectUrl": "https://github.com/Byndyusoft/Byndyusoft.TemplateApi",
+  "description": "",
+  "name": "Byndyusoft api template",
+  "defaultName": "Byndyusoft.TemplateApi",
+  "identity": "Byndyusoft.TemplateApi",
+  "groupIdentity": "bs",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "shortName": "bsapi",
+  "sourceName": "Byndyusoft.TemplateApi"
+}

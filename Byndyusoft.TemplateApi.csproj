@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<PackageType>Template</PackageType>
+		<PackageVersion>1.0.0</PackageVersion>
+		<NoDefaultExcludes>true</NoDefaultExcludes>
+		<PackageId>Byndyusoft.TemplateApi</PackageId>
+		<Title>Byndyusoft.TemplateApi</Title>
+		<Authors>Byndyusoft</Authors>
+		<Description>Byndyusoft api template project</Description>
+		<PackageTags>dotnet-new;templates</PackageTags>
+		<TargetFramework>netstandard2.1</TargetFramework>
+
+		<IncludeContentInPack>true</IncludeContentInPack>
+		<IncludeBuildOutput>false</IncludeBuildOutput>
+		<ContentTargetFolders>content</ContentTargetFolders>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Content Include="byndyusoft-templates-api\**\*;" Exclude="**\bin\**;**\obj\**;Readme.md;.vs\**;.git\**;.gitmodules;.github\**" />
+		<Compile Remove ="**\*" />
+	</ItemGroup>	
+
+</Project>
+
