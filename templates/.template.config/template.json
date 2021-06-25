@@ -6,7 +6,7 @@
   "description": "",
   "name": "Byndyusoft api template",
   "defaultName": "Byndyusoft.Template",
-  "identity": "Byndyusoft.TemplateApi",
+  "identity": "Byndyusoft.Template",
   "groupIdentity": "bs",
   "tags": {
     "language": "C#",
