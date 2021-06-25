@@ -4,8 +4,8 @@
 		<PackageType>Template</PackageType>
 		<PackageVersion>1.0.0</PackageVersion>
 		<NoDefaultExcludes>true</NoDefaultExcludes>
-		<PackageId>Byndyusoft.TemplateApi</PackageId>
-		<Title>Byndyusoft.TemplateApi</Title>
+		<PackageId>Byndyusoft.Template</PackageId>
+		<Title>Byndyusoft.Template</Title>
 		<Authors>Byndyusoft</Authors>
 		<Description>Byndyusoft api template project</Description>
 		<PackageTags>dotnet-new;templates</PackageTags>
@@ -17,7 +17,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Content Include="byndyusoft-templates-api\**\*;" Exclude="**\bin\**;**\obj\**;Readme.md;.vs\**;.git\**;.gitmodules;.github\**" />
+		<Content Include="templates\**\*;" Exclude="templates\**\bin\**;templates\**\obj\**;.vs\**" />
 		<Compile Remove ="**\*" />
 	</ItemGroup>	
 

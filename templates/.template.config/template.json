@@ -5,7 +5,7 @@
   "projectUrl": "https://github.com/Byndyusoft/Byndyusoft.TemplateApi",
   "description": "",
   "name": "Byndyusoft api template",
-  "defaultName": "Byndyusoft.TemplateApi",
+  "defaultName": "Byndyusoft.Template",
   "identity": "Byndyusoft.TemplateApi",
   "groupIdentity": "bs",
   "tags": {
@@ -13,5 +13,5 @@
     "type": "project"
   },
   "shortName": "bsapi",
-  "sourceName": "Byndyusoft.TemplateApi"
+  "sourceName": "Byndyusoft.Template"
 }
