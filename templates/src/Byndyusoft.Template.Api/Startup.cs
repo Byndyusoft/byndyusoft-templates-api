@@ -16,7 +16,7 @@ namespace Byndyusoft.Template.Api
     using Swagger;
     using Swashbuckle.AspNetCore.SwaggerGen;
     using Swashbuckle.AspNetCore.SwaggerUI;
-    using Tracing;
+    using Byndyusoft.Tracing;
 
     public class Startup
     {
