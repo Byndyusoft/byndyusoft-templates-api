@@ -5,8 +5,8 @@
   "projectUrl": "https://github.com/Byndyusoft/Byndyusoft.TemplateApi",
   "description": "",
   "name": "Byndyusoft api template",
-  "defaultName": "Byndyusoft.Template",
-  "identity": "Byndyusoft.Template",
+  "defaultName": "Byndyusoft.Template.Api",
+  "identity": "Byndyusoft.Template.Api",
   "groupIdentity": "bs",
   "tags": {
     "language": "C#",
