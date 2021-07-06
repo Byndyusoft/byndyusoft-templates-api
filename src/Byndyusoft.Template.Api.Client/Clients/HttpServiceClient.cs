@@ -65,14 +65,12 @@
             return readAsStringAsync;
         }
 
-        public async Task<string> PostAsync<T>(string url, T content) where T : class
+        public async Task PostAsync<TContent>(string url, TContent content) where TContent : class
         {
             var endpoint = $"{_baseUrl}{url}";
             var response = await _client.PostAsJsonAsync(endpoint, content);
 
             response.EnsureSuccessStatusCode();
-
-            return await response.Content.ReadAsStringAsync();
         }
 
         public async Task<TResult> PostAsync<TContent, TResult>(string url, TContent content)
