@@ -79,8 +79,6 @@ namespace Byndyusoft.Template.Api
                    });
             }
 
-            app.UseRouting();
-
             app
                 .UseHealthChecks("/healthz")
                 .UseMetricServer()

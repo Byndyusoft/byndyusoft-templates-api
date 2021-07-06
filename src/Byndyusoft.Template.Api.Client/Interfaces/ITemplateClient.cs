@@ -5,6 +5,6 @@
 
     public interface ITemplateClient
     {
-        public Task<TemplateDto> GetTemplate(int templateId);
+        Task<TemplateDto> GetTemplate(int templateId);
     }
 }
