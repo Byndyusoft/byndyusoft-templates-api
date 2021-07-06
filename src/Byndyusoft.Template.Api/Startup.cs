@@ -5,16 +5,12 @@ namespace Byndyusoft.Template.Api
     using Installers;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
-    using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.ApiExplorer;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
-    using Microsoft.Extensions.Options;
     using Npgsql;
     using Prometheus;
-    using Swagger;
-    using Swashbuckle.AspNetCore.SwaggerGen;
     using Swashbuckle.AspNetCore.SwaggerUI;
     using Tracing;
 
@@ -37,8 +33,7 @@ namespace Byndyusoft.Template.Api
 
             services.AddHealthChecks();
 
-            services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
-            services.AddSwaggerGen();
+            services.AddSwagger();
 
             services.AddApplicationServices();
 

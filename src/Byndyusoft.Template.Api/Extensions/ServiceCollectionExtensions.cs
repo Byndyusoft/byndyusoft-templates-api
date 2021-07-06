@@ -2,6 +2,9 @@
 {
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Options;
+    using Swagger;
+    using Swashbuckle.AspNetCore.SwaggerGen;
 
     public static class ServiceCollectionExtensions
     {
@@ -18,6 +21,13 @@
                                options.GroupNameFormat = "'v'VVV";
                                options.SubstituteApiVersionInUrl = true;
                            });
+        }
+
+        public static IServiceCollection AddSwagger(this IServiceCollection services)
+        {
+            return
+                services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>()
+                        .AddSwaggerGen();
         }
     }
 }
