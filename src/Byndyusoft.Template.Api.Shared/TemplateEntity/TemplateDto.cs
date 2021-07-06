@@ -1,4 +1,4 @@
-﻿namespace Byndyusoft.Template.Api.Shared.Dtos
+﻿namespace Byndyusoft.Template.Api.Shared.TemplateEntity
 {
     public class TemplateDto
     {

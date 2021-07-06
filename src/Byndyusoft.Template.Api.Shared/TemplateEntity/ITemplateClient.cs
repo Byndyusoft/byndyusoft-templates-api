@@ -1,7 +1,6 @@
-﻿namespace Byndyusoft.Template.Api.Client.Interfaces
+﻿namespace Byndyusoft.Template.Api.Shared.TemplateEntity
 {
     using System.Threading.Tasks;
-    using Shared.Dtos;
 
     public interface ITemplateClient
     {

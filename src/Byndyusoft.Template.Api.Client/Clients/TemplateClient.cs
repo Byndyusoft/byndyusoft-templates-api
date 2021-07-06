@@ -3,12 +3,11 @@
     using System;
     using System.Net.Http;
     using System.Threading.Tasks;
-    using Interfaces;
     using Microsoft.Extensions.Options;
     using OpenTracing;
     using OpenTracing.Tag;
     using Settings;
-    using Shared.Dtos;
+    using Shared.TemplateEntity;
 
     /// <inheritdoc cref="ITemplateClient" />
     public class TemplateClient : HttpServiceClient, ITemplateClient

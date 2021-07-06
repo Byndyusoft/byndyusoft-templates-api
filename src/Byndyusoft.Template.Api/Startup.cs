@@ -1,7 +1,9 @@
 namespace Byndyusoft.Template.Api
 {
     using System.Text.Json.Serialization;
-    using Extensions;
+    using Infrastructure.Metrics;
+    using Infrastructure.Swagger;
+    using Infrastructure.Versioning;
     using Installers;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
@@ -16,12 +18,12 @@ namespace Byndyusoft.Template.Api
 
     public class Startup
     {
-        public IConfiguration Configuration { get; }
-
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
+
+        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
@@ -45,7 +47,6 @@ namespace Byndyusoft.Template.Api
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IApiVersionDescriptionProvider apiVersionDescriptionProvider)
         {
             if (env.IsProduction() == false)
-            {
                 app.UseSwagger()
                    .UseSwaggerUI(options =>
                    {
@@ -56,7 +57,6 @@ namespace Byndyusoft.Template.Api
                        options.DefaultModelRendering(ModelRendering.Model);
                        options.DefaultModelExpandDepth(3);
                    });
-            }
 
             app
                 .UseHealthChecks("/healthz")
@@ -64,7 +64,6 @@ namespace Byndyusoft.Template.Api
                 .UseRouting()
                 .UseRequestsMetrics()
                 .UseEndpoints(endpoints => endpoints.MapControllers());
-
         }
     }
 }

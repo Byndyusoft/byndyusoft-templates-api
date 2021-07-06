@@ -1,10 +1,10 @@
 ﻿namespace Byndyusoft.Template.Api.Client.Utils
 {
     using Clients;
-    using Interfaces;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Settings;
+    using Shared.TemplateEntity;
 
     public static class ServiceCollectionExtension
     {

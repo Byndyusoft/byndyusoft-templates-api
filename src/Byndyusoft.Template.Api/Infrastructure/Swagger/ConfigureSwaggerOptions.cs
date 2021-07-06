@@ -1,4 +1,4 @@
-﻿namespace Byndyusoft.Template.Api.Swagger
+﻿namespace Byndyusoft.Template.Api.Infrastructure.Swagger
 {
     using System;
     using System.IO;

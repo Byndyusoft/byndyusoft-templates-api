@@ -1,4 +1,4 @@
-﻿namespace Byndyusoft.Template.Api.Extensions
+﻿namespace Byndyusoft.Template.Api.Infrastructure.Metrics
 {
     using System;
     using System.Net;
