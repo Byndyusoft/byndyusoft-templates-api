@@ -27,16 +27,12 @@ namespace Byndyusoft.Template.Api
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRelationalDb(NpgsqlFactory.Instance, Configuration.GetConnectionString("Main"));
-            
-            services.AddVersioning();
-
-            services.AddHealthChecks();
+            services.AddApplicationServices()
+                    .AddRelationalDb(NpgsqlFactory.Instance, Configuration.GetConnectionString("Main"))
+                    .AddVersioning();
 
             services.AddSwagger();
-
-            services.AddApplicationServices();
-
+            services.AddHealthChecks();
             services.AddControllers(options =>
                     {
                         options.PassRequestsToTracer()
