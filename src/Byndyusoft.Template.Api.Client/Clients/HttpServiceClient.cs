@@ -107,6 +107,14 @@
             return await response.Content.ReadAsStringAsync();
         }
 
+        public async Task DeleteAsync(string url, int id)
+        {
+            var endpoint = $"{_baseUrl}{url}/{id}";
+            var response = await _client.DeleteAsync(endpoint);
+
+            response.EnsureSuccessStatusCode();
+        }
+
         public async Task<byte[]> GetByteArrayAsync(string url)
         {
             var endpoint = $"{_baseUrl}{url}";
