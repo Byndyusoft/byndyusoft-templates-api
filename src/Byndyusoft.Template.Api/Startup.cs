@@ -48,10 +48,9 @@ namespace Byndyusoft.Template.Api
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IApiVersionDescriptionProvider apiVersionDescriptionProvider)
         {
-            if (env.IsDevelopment())
+            if (env.IsProduction() == false)
             {
-                app.UseDeveloperExceptionPage()
-                   .UseSwagger()
+                app.UseSwagger()
                    .UseSwaggerUI(options =>
                    {
                        foreach (var apiVersionDescription in apiVersionDescriptionProvider.ApiVersionDescriptions)
