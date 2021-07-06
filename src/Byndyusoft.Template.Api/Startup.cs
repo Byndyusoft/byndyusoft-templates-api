@@ -32,19 +32,8 @@ namespace Byndyusoft.Template.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRelationalDb(NpgsqlFactory.Instance, Configuration.GetConnectionString("Main"));
-
-            services.AddApiVersioning(options =>
-            {
-                options.DefaultApiVersion = ApiVersion.Default;
-                options.AssumeDefaultVersionWhenUnspecified = true;
-                options.ReportApiVersions = true;
-            });
-
-            services.AddVersionedApiExplorer(options =>
-            {
-                options.GroupNameFormat = "'v'VVV";
-                options.SubstituteApiVersionInUrl = true;
-            });
+            
+            services.AddVersioning();
 
             services.AddHealthChecks();
 
