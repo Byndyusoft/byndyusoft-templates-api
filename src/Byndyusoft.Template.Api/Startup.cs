@@ -13,7 +13,6 @@ namespace Byndyusoft.Template.Api
     using Microsoft.Extensions.Hosting;
     using Npgsql;
     using Prometheus;
-    using Swashbuckle.AspNetCore.SwaggerUI;
     using Tracing;
 
     public class Startup
@@ -47,16 +46,7 @@ namespace Byndyusoft.Template.Api
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IApiVersionDescriptionProvider apiVersionDescriptionProvider)
         {
             if (env.IsProduction() == false)
-                app.UseSwagger()
-                   .UseSwaggerUI(options =>
-                   {
-                       foreach (var apiVersionDescription in apiVersionDescriptionProvider.ApiVersionDescriptions)
-                           options.SwaggerEndpoint($"/swagger/{apiVersionDescription.GroupName}/swagger.json", apiVersionDescription.GroupName.ToUpperInvariant());
-
-                       options.DisplayRequestDuration();
-                       options.DefaultModelRendering(ModelRendering.Model);
-                       options.DefaultModelExpandDepth(3);
-                   });
+                app.UseSwagger(apiVersionDescriptionProvider);
 
             app
                 .UseHealthChecks("/healthz")
