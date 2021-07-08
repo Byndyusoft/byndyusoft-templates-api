@@ -28,9 +28,6 @@ jobs:
           
       - name: build
         run: dotnet build
-
-      - name: test
-        run: dotnet test
         
       - name: publish
         uses: rohith/publish-nuget@v2

@@ -34,8 +34,3 @@ jobs:
 
       - name: build
         run: dotnet build
-
-      - name: test
-        run: |
-          dotnet test --framework netcoreapp3.1
-          dotnet test --framework net5.0
