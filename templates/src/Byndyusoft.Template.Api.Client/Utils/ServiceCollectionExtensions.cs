@@ -1,10 +1,10 @@
 ﻿namespace Byndyusoft.Template.Api.Client.Utils
 {
     using Clients;
-    using Interfaces;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Settings;
+    using Shared.TemplateEntity;
 
     public static class ServiceCollectionExtension
     {
@@ -15,7 +15,6 @@
         /// <param name="configuration"></param>
         public static void AddTemplateClient(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddSingleton<ITemplateClient, TemplateClient>();
             services.AddHttpClient<ITemplateClient, TemplateClient>();
 
             services.Configure<TemplateApiSettings>(configuration.GetSection(nameof(TemplateApiSettings)));

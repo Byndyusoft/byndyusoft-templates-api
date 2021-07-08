@@ -65,14 +65,12 @@
             return readAsStringAsync;
         }
 
-        public async Task<string> PostAsync<T>(string url, T content) where T : class
+        public async Task PostAsync<TContent>(string url, TContent content) where TContent : class
         {
             var endpoint = $"{_baseUrl}{url}";
             var response = await _client.PostAsJsonAsync(endpoint, content);
 
             response.EnsureSuccessStatusCode();
-
-            return await response.Content.ReadAsStringAsync();
         }
 
         public async Task<TResult> PostAsync<TContent, TResult>(string url, TContent content)
@@ -105,6 +103,14 @@
             response.EnsureSuccessStatusCode();
 
             return await response.Content.ReadAsStringAsync();
+        }
+
+        public async Task DeleteAsync(string url, int id)
+        {
+            var endpoint = $"{_baseUrl}{url}/{id}";
+            var response = await _client.DeleteAsync(endpoint);
+
+            response.EnsureSuccessStatusCode();
         }
 
         public async Task<byte[]> GetByteArrayAsync(string url)
