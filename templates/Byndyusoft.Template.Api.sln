@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Byndyusoft.Template.Integra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Byndyusoft.Template.Domain", "src\Byndyusoft.Template.Domain\Byndyusoft.Template.Domain.csproj", "{8E480894-918E-405B-9C5A-4108A0F38DAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Byndyusoft.Template.DataAccess", "src\Byndyusoft.Template.DataAccess\Byndyusoft.Template.DataAccess.csproj", "{546617EA-C3D5-475C-A0E9-5AAB3EAFB275}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Byndyusoft.Template.DataAccess", "src\Byndyusoft.Template.DataAccess\Byndyusoft.Template.DataAccess.csproj", "{546617EA-C3D5-475C-A0E9-5AAB3EAFB275}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

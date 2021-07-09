@@ -1,6 +1,6 @@
 ﻿namespace Byndyusoft.Template.DataAccess.Repositories
 {
-    using Data.Relational;
+    using Byndyusoft.Data.Relational;
     using System.Diagnostics;
     using System.Linq;
     using System.Threading;
