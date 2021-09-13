@@ -3,8 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <Nullable>enable</Nullable>
-	<PublishDir>/app/out/api</PublishDir>
-	<AssemblyName>Api</AssemblyName>
+    <PublishDir>/app/out/api</PublishDir>
   </PropertyGroup>
 
   <ItemGroup>
