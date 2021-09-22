@@ -1,8 +1,15 @@
 ﻿# Шаблон сервиса .NET Core
 
 ## Что включает?
-Шаблон включает 8 проектов для полноценного запуска сервиса. Подключены swagger, jaeger, nlog. Добавлены сервисы для работы с базой данных, RabbitMQ, S3-хранилищем. API поддерживает версионирование, health-check\status.
+Шаблон включает:
+ - Настройка swagger
+ - Пакет для трассировки через Byndyusoft.Tracing
+ - Пакет для логирования Byndyusoft.Logging
+ - Пакет для работы с БД Byndyusoft.Data.Relational
+ - Хэлчеки через метод /healthz
+ - Подключены основные технические метрики Prometheus
 
+Проекты:
 - Byndyusoft.Template.Domain - бизнес-логика приложения
 - Byndyusoft.Template.DataAccess - слой доступа к данным
 - Byndyusoft.Template.Migrator - мигратор базы данных на основе https://github.com/fluentmigrator/fluentmigrator
