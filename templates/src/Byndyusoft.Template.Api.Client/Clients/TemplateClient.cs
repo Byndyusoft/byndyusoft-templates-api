@@ -7,7 +7,7 @@
     using OpenTracing;
     using OpenTracing.Tag;
     using Settings;
-    using Shared.TemplateEntity;
+    using Contracts.TemplateEntity;
 
     /// <inheritdoc cref="ITemplateClient" />
     public class TemplateClient : HttpServiceClient, ITemplateClient

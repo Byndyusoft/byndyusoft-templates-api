@@ -1,4 +1,4 @@
-﻿namespace Byndyusoft.Template.Api.Shared.TemplateEntity
+﻿namespace Byndyusoft.Template.Api.Contracts.TemplateEntity
 {
     using System.Threading.Tasks;
 
