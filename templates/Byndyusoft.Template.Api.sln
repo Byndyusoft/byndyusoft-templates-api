@@ -17,6 +17,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Byndyusoft.Template.Domain"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Byndyusoft.Template.DataAccess", "src\Byndyusoft.Template.DataAccess\Byndyusoft.Template.DataAccess.csproj", "{546617EA-C3D5-475C-A0E9-5AAB3EAFB275}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0DEF4346-9741-42A8-B290-DFDFEB0FE39E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0C9A5086-FD6B-4D4A-B5C5-F3583E10BDF5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{21561DF2-C62D-4207-83A0-A6D8DDB01A79}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+		global.json = global.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +64,15 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B4720449-2D71-4324-9C13-D5B8EBF1C3BD} = {0DEF4346-9741-42A8-B290-DFDFEB0FE39E}
+		{9B7CE02E-153B-4222-8205-EEE09C1EFE42} = {0DEF4346-9741-42A8-B290-DFDFEB0FE39E}
+		{9394A857-9D59-4534-AA66-70D78249EF8E} = {0DEF4346-9741-42A8-B290-DFDFEB0FE39E}
+		{3C35E3AB-52E8-4A5E-8300-F40A95B997F3} = {0DEF4346-9741-42A8-B290-DFDFEB0FE39E}
+		{C4313E02-A2D8-4918-8BCF-A19CD21C498B} = {0C9A5086-FD6B-4D4A-B5C5-F3583E10BDF5}
+		{8E480894-918E-405B-9C5A-4108A0F38DAC} = {0DEF4346-9741-42A8-B290-DFDFEB0FE39E}
+		{546617EA-C3D5-475C-A0E9-5AAB3EAFB275} = {0DEF4346-9741-42A8-B290-DFDFEB0FE39E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AAB1B704-54D7-4D72-A8AC-DF021A3E9CAD}
