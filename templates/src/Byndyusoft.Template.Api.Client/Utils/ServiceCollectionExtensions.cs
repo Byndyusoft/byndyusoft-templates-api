@@ -4,7 +4,7 @@
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Settings;
-    using Shared.TemplateEntity;
+    using Contracts.TemplateEntity;
 
     public static class ServiceCollectionExtension
     {

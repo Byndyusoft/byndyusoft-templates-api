@@ -26,7 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Byndyusoft.Template.Api.Shared\Byndyusoft.Template.Api.Shared.csproj" />
+    <ProjectReference Include="..\Byndyusoft.Template.Api.Contracts\Byndyusoft.Template.Api.Contracts.csproj" />
   </ItemGroup>
 
 </Project>
