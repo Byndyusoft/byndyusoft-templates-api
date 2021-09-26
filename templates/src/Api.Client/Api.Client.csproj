@@ -28,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Byndyusoft.Template.Api.Contracts\Byndyusoft.Template.Api.Contracts.csproj" />
+    <ProjectReference Include="..\Api.Contracts\Api.Contracts.csproj" />
   </ItemGroup>
 
 </Project>

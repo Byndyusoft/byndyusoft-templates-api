@@ -26,8 +26,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Byndyusoft.Template.Api.Client\Byndyusoft.Template.Api.Client.csproj" />
-    <ProjectReference Include="..\..\src\Byndyusoft.Template.Api\Byndyusoft.Template.Api.csproj" />
+    <ProjectReference Include="..\..\src\Api.Client\Api.Client.csproj" />
+    <ProjectReference Include="..\..\src\Api\Api.csproj" />
   </ItemGroup>
 
 </Project>
