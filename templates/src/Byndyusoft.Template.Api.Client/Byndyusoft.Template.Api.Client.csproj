@@ -3,7 +3,9 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.1;net5.0</TargetFrameworks>
     <Nullable>enable</Nullable>
-	<IsPackable>true</IsPackable>
+    <IsPackable>true</IsPackable>
+    <AssemblyName>Byndyusoft.Template.Api.Client</AssemblyName>
+    <RootNamespace>Byndyusoft.Template.Api.Client</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

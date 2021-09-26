@@ -3,7 +3,9 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <Nullable>enable</Nullable>
-	<IsPackable>true</IsPackable>
+    <IsPackable>true</IsPackable>
+    <AssemblyName>Byndyusoft.Template.Api.Contracts</AssemblyName>
+    <RootNamespace>Byndyusoft.Template.Api.Contracts</RootNamespace>
   </PropertyGroup>
 
 </Project>

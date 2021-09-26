@@ -3,6 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <Nullable>enable</Nullable>
+    <AssemblyName>Byndyusoft.Template.Domain</AssemblyName>
+    <RootNamespace>Byndyusoft.Template.Domain</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
