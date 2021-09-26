@@ -13,7 +13,7 @@ namespace Byndyusoft.Template.Api
     using Microsoft.Extensions.Hosting;
     using Npgsql;
     using Prometheus;
-    using Tracing;
+    using Byndyusoft.Tracing;
 
     public class Startup
     {
