@@ -1,17 +1,44 @@
 {
-"$schema": "http://json.schemastore.org/template",
-  "author": "Byndyusoft",
-  "classifications": ["Web"],
-  "projectUrl": "https://github.com/Byndyusoft/Byndyusoft.TemplateApi",
-  "description": "",
-  "name": "Byndyusoft api template",
-  "defaultName": "Byndyusoft.Template.Api",
-  "identity": "Byndyusoft.Template.Api",
-  "groupIdentity": "bs",
-  "tags": {
-    "language": "C#",
-    "type": "project"
-  },
-  "shortName": "bsapi",
-  "sourceName": "Byndyusoft.Template"
+   "$schema":"http://json.schemastore.org/template",
+   "author":"Byndyusoft",
+   "classifications":[
+      "Web"
+   ],
+   "projectUrl":"https://github.com/Byndyusoft/Byndyusoft.TemplateApi",
+   "description":"",
+   "name":"Byndyusoft api template",
+   "defaultName":"Byndyusoft.Template.Api",
+   "identity":"Byndyusoft.Template.Api",
+   "groupIdentity":"bs",
+   "tags":{
+      "language":"C#",
+      "type":"project"
+   },
+   "shortName":"bsapi",
+   "sourceName":"Byndyusoft.Template",
+   "symbols":{
+      "nameLower":{
+         "type":"generated",
+         "generator":"casing",
+         "parameters":{
+            "source":"name",
+            "toLower":true
+         }
+      },
+      "rootAssemblyNamePrefix":{
+         "type":"generated",
+         "generator":"regex",
+         "dataType":"string",
+         "parameters":{
+            "source":"nameLower",
+            "steps":[
+               {
+                  "regex":"\\.",
+                  "replacement":"-"
+               }
+            ]
+         },
+         "replaces":"byndyusoft-template"
+      }
+   }
 }
