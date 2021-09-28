@@ -3,6 +3,8 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
+	  <PublishDir>/app/out/migrator</PublishDir>
+	  <AssemblyName>Migrator</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

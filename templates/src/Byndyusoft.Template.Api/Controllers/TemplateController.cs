@@ -2,7 +2,7 @@
 {
     using Domain.Services.Interfaces;
     using Microsoft.AspNetCore.Mvc;
-    using Shared.TemplateEntity;
+    using Contracts.TemplateEntity;
 
     [ApiController]
     [ApiVersion("1.0")]

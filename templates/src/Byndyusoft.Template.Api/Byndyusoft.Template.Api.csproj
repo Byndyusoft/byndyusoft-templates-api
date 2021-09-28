@@ -3,6 +3,8 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <Nullable>enable</Nullable>
+    <PublishDir>/app/out/api</PublishDir>
+    <AssemblyName Condition="'$(SERVICE_NAME)' != ''">$(SERVICE_NAME)</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,7 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Byndyusoft.Template.Api.Shared\Byndyusoft.Template.Api.Shared.csproj" />
+    <ProjectReference Include="..\Byndyusoft.Template.Api.Contracts\Byndyusoft.Template.Api.Contracts.csproj" />
     <ProjectReference Include="..\Byndyusoft.Template.Domain\Byndyusoft.Template.Domain.csproj" />
   </ItemGroup>
 
