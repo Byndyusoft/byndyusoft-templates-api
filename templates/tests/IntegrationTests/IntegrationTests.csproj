@@ -3,7 +3,9 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <Nullable>enable</Nullable>
-	<IsPublishable>false</IsPublishable>
+    <IsPublishable>false</IsPublishable>
+    <AssemblyName>Byndyusoft.Template.IntegrationTests</AssemblyName>
+    <RootNamespace>Byndyusoft.Template.IntegrationTests</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,8 +26,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Byndyusoft.Template.Api.Client\Byndyusoft.Template.Api.Client.csproj" />
-    <ProjectReference Include="..\..\src\Byndyusoft.Template.Api\Byndyusoft.Template.Api.csproj" />
+    <ProjectReference Include="..\..\src\Api.Client\Api.Client.csproj" />
+    <ProjectReference Include="..\..\src\Api\Api.csproj" />
   </ItemGroup>
 
 </Project>

@@ -10,13 +10,13 @@
  - Подключены основные технические метрики Prometheus
 
 Проекты:
-- Byndyusoft.Template.Domain - бизнес-логика приложения
-- Byndyusoft.Template.DataAccess - слой доступа к данным
-- Byndyusoft.Template.Migrator - мигратор базы данных на основе https://github.com/fluentmigrator/fluentmigrator
-- Byndyusoft.Template.Api - веб-апи приложения
-- Byndyusoft.Template.Api.Client - клиент для веб-апи, расширение для подключения клиента в потребителе
-- Byndyusoft.Template.Api.Contracts - Контракты для веб-апи и клиента
-- Byndyusoft.Template.IntegrationTests - интеграционные тесты на веб-апи
+- Domain - бизнес-логика приложения
+- DataAccess - слой доступа к данным
+- Migrator - мигратор базы данных на основе https://github.com/fluentmigrator/fluentmigrator
+- Api - веб-апи приложения
+- Api.Client - клиент для веб-апи, расширение для подключения клиента в потребителе
+- Api.Contracts - Контракты для веб-апи и клиента
+- IntegrationTests - интеграционные тесты на веб-апи
 
 
 
