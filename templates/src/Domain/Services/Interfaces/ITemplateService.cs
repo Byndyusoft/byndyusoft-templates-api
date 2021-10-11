@@ -2,6 +2,6 @@
 {
     public interface ITemplateService
     {
-        int GetId(int id);
+        int? GetId(int id);
     }
 }

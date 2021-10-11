@@ -12,7 +12,7 @@
             _logger = logger;
         }
 
-        public int GetId(int id)
+        public int? GetId(int id)
         {
             _logger.LogInformation("Get some id {Id}", id);
 

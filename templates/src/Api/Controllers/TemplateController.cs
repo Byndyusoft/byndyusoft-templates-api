@@ -1,9 +1,14 @@
 ﻿namespace Byndyusoft.Template.Api.Controllers
 {
+    using System.Net;
+    using System.Net.Mime;
+    using Contracts.TemplateEntity;
     using Domain.Services.Interfaces;
     using Microsoft.AspNetCore.Mvc;
-    using Contracts.TemplateEntity;
 
+    /// <summary>
+    ///     Templates API implementation
+    /// </summary>
     [ApiController]
     [ApiVersion("1.0")]
     [Route("api/[controller]")]
@@ -12,17 +17,31 @@
     {
         private readonly ITemplateService _service;
 
+        /// <summary>
+        ///     Initializes controller dependencies
+        /// </summary>
+        /// <param name="service">templates service</param>
         public TemplatesController(ITemplateService service)
         {
             _service = service;
         }
 
+        /// <summary>
+        ///     Returns template dto
+        /// </summary>
+        /// <param name="id">Template dto id</param>
+        /// <returns>Template dto</returns>
         [HttpGet("{id}")]
-        public ActionResult<TemplateDto> GetTemplate(int id)
+        [Produces(MediaTypeNames.Application.Json)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(TemplateDto))]
+        public ActionResult GetTemplate(int id)
         {
             var resultId = _service.GetId(id);
 
-            return new TemplateDto {Id = resultId};
+            return resultId.HasValue
+                       ? Ok(new TemplateDto { Id = resultId.Value })
+                       : NotFound();
         }
     }
 }
