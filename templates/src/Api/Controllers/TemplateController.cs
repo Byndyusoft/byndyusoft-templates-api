@@ -2,12 +2,12 @@
 {
     using System.Net;
     using System.Net.Mime;
+    using Contracts.TemplateEntity;
     using Domain.Services.Interfaces;
     using Microsoft.AspNetCore.Mvc;
-    using Contracts.TemplateEntity;
 
     /// <summary>
-    /// Templates API implementation
+    ///     Templates API implementation
     /// </summary>
     [ApiController]
     [ApiVersion("1.0")]
@@ -18,7 +18,7 @@
         private readonly ITemplateService _service;
 
         /// <summary>
-        /// Initializes controller dependencies
+        ///     Initializes controller dependencies
         /// </summary>
         /// <param name="service">templates service</param>
         public TemplatesController(ITemplateService service)
@@ -27,7 +27,7 @@
         }
 
         /// <summary>
-        /// Returns template dto
+        ///     Returns template dto
         /// </summary>
         /// <param name="id">Template dto id</param>
         /// <returns>Template dto</returns>
@@ -40,8 +40,8 @@
             var resultId = _service.GetId(id);
 
             return resultId.HasValue
-                ? Ok(new TemplateDto { Id = resultId.Value })
-                : NotFound();
+                       ? Ok(new TemplateDto { Id = resultId.Value })
+                       : NotFound();
         }
     }
 }
