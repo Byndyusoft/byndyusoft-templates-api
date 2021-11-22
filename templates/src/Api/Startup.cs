@@ -28,22 +28,28 @@ namespace Byndyusoft.Template.Api
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddApplicationServices()
-                    .AddRelationalDb(NpgsqlFactory.Instance, Configuration.GetConnectionString("Main"))
-                    .AddVersioning();
+            services
+                .AddRouting(options => options.LowercaseUrls = true)
+                .AddControllers(options => options.PassRequestsToTracer().PassResponsesToTracer())
+                .AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
 
-            services.AddSwagger();
             services.AddHealthChecks();
-            services.AddControllers(options =>
-                    {
-                        options.PassRequestsToTracer()
-                               .PassResponsesToTracer();
-                    })
-                    .AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
+
+            services
+                .AddVersioning()
+                .AddSwagger();
+
+            services
+                .AddRelationalDb(NpgsqlFactory.Instance, Configuration.GetConnectionString("Main"))
+                .AddApplicationServices();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IApiVersionDescriptionProvider apiVersionDescriptionProvider)
+        public void Configure(
+            IApplicationBuilder app,
+            IWebHostEnvironment env,
+            IApiVersionDescriptionProvider apiVersionDescriptionProvider
+        )
         {
             if (env.IsProduction() == false)
                 app.UseSwagger(apiVersionDescriptionProvider);
