@@ -3,6 +3,7 @@
     using System;
     using System.Net.Http;
     using System.Threading.Tasks;
+    using ApiClient;
     using Microsoft.Extensions.Options;
     using OpenTracing;
     using OpenTracing.Tag;
@@ -10,14 +11,16 @@
     using Contracts.TemplateEntity;
 
     /// <inheritdoc cref="ITemplateClient" />
-    public class TemplateClient : HttpServiceClient, ITemplateClient
+    public class TemplateClient : BaseClient, ITemplateClient
     {
+        private const string ApiPrefix = "api/v1/templates";
         private readonly ITracer _tracer;
 
-        public TemplateClient(HttpClient httpClient,
-            IOptions<TemplateApiSettings> apiSettings,
-            ITracer tracer)
-            : base(httpClient, apiSettings)
+        public TemplateClient(
+            HttpClient httpClient,
+            ITracer tracer,
+            IOptions<TemplateApiSettings> apiSettings
+        ) : base(httpClient, apiSettings)
         {
             _tracer = tracer;
         }
@@ -28,8 +31,7 @@
 
             try
             {
-                var templateDto = await GetAsync<TemplateDto>($"/v1.0/templates/{templateId}").ConfigureAwait(false);
-
+                var templateDto = await GetAsync<TemplateDto>($"{ApiPrefix}/{templateId}");
                 return templateDto;
             }
             catch (Exception)
