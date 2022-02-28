@@ -11,9 +11,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Byndyusoft.Data.Relational" Version="0.6.0" />
-    <PackageReference Include="Byndyusoft.Logging" Version="1.0.3" />
-    <PackageReference Include="Byndyusoft.Tracing" Version="0.1.6" />
+    <PackageReference Include="Byndyusoft.Data.Relational" Version="0.7.0" />
+    <PackageReference Include="Byndyusoft.Logging" Version="1.0.7" />
+    <PackageReference Include="Byndyusoft.MaskedSerialization.Serilog" Version="1.1.0-alpha" />
+    <PackageReference Include="Byndyusoft.Tracing" Version="0.2.0-alpha" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />

@@ -5,6 +5,7 @@ namespace Byndyusoft.Template.Api
     using Microsoft.Extensions.Hosting;
     using Serilog;
     using Byndyusoft.Tracing;
+    using Byndyusoft.MaskedSerialization.Serilog.Extensions;
 
     public class Program
     {
@@ -26,7 +27,8 @@ namespace Byndyusoft.Template.Api
                        {
                            webBuilder.UseStartup<Startup>();
                            webBuilder.UseSerilog((context, configuration) => configuration
-                               .UseDefaultSettings(context.Configuration, "Template project"));
+                               .UseDefaultSettings(context.Configuration, "Template project")
+                               .WithMaskingPolicy());
                        });
         }
     }
