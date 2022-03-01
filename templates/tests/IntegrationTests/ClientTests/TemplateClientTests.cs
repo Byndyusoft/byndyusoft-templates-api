@@ -19,7 +19,7 @@
         {
             var apiSettings = Options.Create(new TemplateApiSettings());
 
-            _templateClient = new TemplateClient(factory.CreateClient(), apiSettings, new MockTracer());
+            _templateClient = new TemplateClient(factory.CreateClient(), new MockTracer(), apiSettings);
         }
 
         [Fact]

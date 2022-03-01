@@ -1,7 +1,8 @@
 ﻿namespace Byndyusoft.Template.Api.Client.Settings
 {
-    public class TemplateApiSettings
+    using ApiClient;
+
+    public class TemplateApiSettings : ApiClientSettings
     {
-        public string Url { get; set; }
     }
 }
