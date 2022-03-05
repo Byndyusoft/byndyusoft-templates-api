@@ -15,9 +15,11 @@
         /// <param name="configuration"></param>
         public static void AddTemplateClient(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddHttpClient<ITemplateClient, TemplateClient>();
+            services
+                .AddOptions()
+                .Configure<TemplateApiSettings>(configuration.GetSection(nameof(TemplateApiSettings)));
 
-            services.Configure<TemplateApiSettings>(configuration.GetSection(nameof(TemplateApiSettings)));
+            services.AddHttpClient<ITemplateClient, TemplateClient>();
         }
     }
 }
