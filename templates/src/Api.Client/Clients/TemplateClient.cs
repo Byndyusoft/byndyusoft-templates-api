@@ -3,7 +3,7 @@
     using System;
     using System.Net.Http;
     using System.Threading.Tasks;
-    using ApiClient;
+    using Byndyusoft.ApiClient;
     using Microsoft.Extensions.Options;
     using OpenTracing;
     using OpenTracing.Tag;
