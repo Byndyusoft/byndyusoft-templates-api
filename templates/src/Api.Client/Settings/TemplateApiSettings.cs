@@ -1,6 +1,6 @@
 ﻿namespace Byndyusoft.Template.Api.Client.Settings
 {
-    using ApiClient;
+    using Byndyusoft.ApiClient;
 
     public class TemplateApiSettings : ApiClientSettings
     {
