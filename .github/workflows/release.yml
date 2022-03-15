@@ -30,7 +30,7 @@ jobs:
         run: dotnet build
         
       - name: publish
-        uses: rohith/publish-nuget@v2
+        uses: alirezanet/publish-nuget@v3.0.0
         with:
           PROJECT_FILE_PATH: Byndyusoft.TemplateApi.csproj
           VERSION_REGEX: ^\s*<PackageVersion>(.*)<\/PackageVersion>\s*$
