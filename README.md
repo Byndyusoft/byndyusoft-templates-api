@@ -6,6 +6,7 @@
  - Пакет для трассировки [Byndyusoft.Tracing](https://github.com/Byndyusoft/byndyusoft-tracing)
  - Пакет для логирования [Byndyusoft.Logging](https://github.com/Byndyusoft/Byndyusoft.Logging)
  - Пакет для работы с БД [Byndyusoft.Data.Relational](https://github.com/Byndyusoft/Byndyusoft.Data.Relational)
+ - Пакет для маскирования чувствительных данных в логах и в трассировке [Byndyusoft.MaskedSerialization](https://github.com/Byndyusoft/Byndyusoft.MaskedSerialization)
  - Хэлчеки через метод /healthz
  - Подключены основные технические метрики Prometheus
 
