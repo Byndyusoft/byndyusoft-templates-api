@@ -39,6 +39,7 @@
         }
 
         public TService GetService<TService>()
+            where TService : class
         {
             return _serviceProvider.GetRequiredService<TService>();
         }

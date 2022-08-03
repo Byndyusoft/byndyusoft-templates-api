@@ -1,6 +1,6 @@
 namespace Byndyusoft.Template.Api
 {
-    using Logging.Configuration;
+    using Byndyusoft.Logging.Configuration;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.Hosting;
     using Serilog;
