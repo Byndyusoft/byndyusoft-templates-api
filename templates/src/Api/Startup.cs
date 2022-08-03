@@ -13,7 +13,6 @@ namespace Byndyusoft.Template.Api
     using Microsoft.Extensions.Hosting;
     using Npgsql;
     using Prometheus;
-    using Byndyusoft.Tracing;
 
     public class Startup
     {
@@ -28,9 +27,11 @@ namespace Byndyusoft.Template.Api
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvcCore().AddTracing();
+
             services
                 .AddRouting(options => options.LowercaseUrls = true)
-                .AddControllers(options => options.PassRequestsToTracer().PassResponsesToTracer())
+                .AddControllers()
                 .AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
 
             services.AddHealthChecks();
