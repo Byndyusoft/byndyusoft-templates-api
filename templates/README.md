@@ -1,4 +1,4 @@
-﻿# Byndyusoft.AspNetCore.Instrumentation.Tracing
+﻿# Byndyusoft.Template.Api
 ASP.NET Core MVC tracing.
 
 [![Nuget](http://img.shields.io/nuget/v/Byndyusoft.Template.Api.svg?maxAge=10800)](https://www.nuget.org/packages/Byndyusoft.Template.Api/) [![NuGet downloads](https://img.shields.io/nuget/dt/Byndyusoft.Template.Api.svg)](https://www.nuget.org/packages/Byndyusoft.Template.Api/) 
