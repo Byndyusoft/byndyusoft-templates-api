@@ -3,7 +3,7 @@
 ## Что включает?
 Шаблон включает:
  - Настройка swagger
- - Пакет для трассировки [Byndyusoft.Tracing](https://github.com/Byndyusoft/byndyusoft-tracing)
+ - Пакет для трассировки http-запросов [Byndyusoft.AspNetCore.Instrumentation.Tracing](https://github.com/Byndyusoft/Byndyusoft.AspNetCore.Instrumentation.Tracing)
  - Пакет для логирования [Byndyusoft.Logging](https://github.com/Byndyusoft/Byndyusoft.Logging)
  - Пакет для работы с БД [Byndyusoft.Data.Relational](https://github.com/Byndyusoft/Byndyusoft.Data.Relational)
  - Пакет для маскирования чувствительных данных в логах и в трассировке [Byndyusoft.MaskedSerialization](https://github.com/Byndyusoft/Byndyusoft.MaskedSerialization)
@@ -22,10 +22,30 @@
 
 
 # Как использовать шаблон?
+
+## Установка шаблона из nuget.org
+
 ### Установка шаблона из nuget в консоли Windows:
 `dotnet new --install Byndyusoft.Template`
 
 В списке должен появиться шаблон с коротким именем bsapi.
+
+### Создание нового сервиса из шаблона (выполнять в пустой директории)
+`dotnet new bsapi -n {Название сервиса}`
+
+Проект готов к использованию!
+
+## Установка шаблона из файла пакета .nupkg.
+
+### Создание nuget пакета для шаблона в корне:
+`dotnet pack`
+
+Вместо создания пакета его можно скачать из [nuget.org](https://www.nuget.org/packages/Byndyusoft.Template).
+
+### Установка шаблона из созданного нами пакета:
+`dotnet new --install .\Byndyusoft.Template.1.1.0.nupkg`
+
+Версия может отличаться.
 
 ### Создание нового сервиса из шаблона (выполнять в пустой директории)
 `dotnet new bsapi -n {Название сервиса}`
