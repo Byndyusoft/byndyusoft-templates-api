@@ -32,6 +32,7 @@ namespace Byndyusoft.Template.Api
                                                          webBuilder.UseStartup<Startup>();
                                                          webBuilder.UseSerilog((context, configuration) => configuration
                                                                                                            .UseDefaultSettings(context.Configuration, serviceName)
+                                                                                                           .UseOpenTelemetryTraces()
                                                                                                            .WriteToOpenTelemetry()
                                                                                                            .WithMaskingPolicy());
                                                      });
