@@ -6,11 +6,11 @@
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
 
-    public class ServicesCollectionFixture
+    public class TestServiceProvider
     {
         private readonly IServiceProvider _serviceProvider;
 
-        public ServicesCollectionFixture()
+        public TestServiceProvider()
         {
             var configuration = CreateConfiguration();
 
