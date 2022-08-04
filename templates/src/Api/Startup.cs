@@ -13,7 +13,6 @@ namespace Byndyusoft.Template.Api
     using Microsoft.Extensions.Hosting;
     using Npgsql;
     using Prometheus;
-    using Byndyusoft.Tracing;
 
     public class Startup
     {
@@ -29,8 +28,12 @@ namespace Byndyusoft.Template.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services
+                .AddMvcCore()
+                .AddTracing();
+
+            services
                 .AddRouting(options => options.LowercaseUrls = true)
-                .AddControllers(options => options.PassRequestsToTracer().PassResponsesToTracer())
+                .AddControllers()
                 .AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
 
             services.AddHealthChecks();

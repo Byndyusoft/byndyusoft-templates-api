@@ -23,7 +23,7 @@
                                context.Response.StatusCode = (int)HttpStatusCode.BadRequest;
                                throw;
                            }
-                           catch (Exception ex)
+                           catch (Exception)
                            {
                                context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
                                throw;
