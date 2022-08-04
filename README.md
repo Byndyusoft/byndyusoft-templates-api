@@ -19,8 +19,6 @@
 - Api.Contracts - Контракты для веб-апи и клиента
 - IntegrationTests - интеграционные тесты на веб-апи
 
-
-
 # Как использовать шаблон?
 
 ## Установка шаблона из nuget.org
@@ -52,7 +50,30 @@
 
 Проект готов к использованию!
 
-# Интеграция OpenTelemetry с JaegerTracing
+# Настройки проекта
+
+## Фильтрация запросов для трассировки
+
+В проекте добавлены список запросов, которые не будут попадать в трассироку. Они описаны в файле [TracerProviderBuilderExtensions.cs](https://github.com/Byndyusoft/byndyusoft-templates-api/blob/main/templates/src/Api/Infrastructure/OpenTelemetry/TracerProviderBuilderExtensions.cs):
+
+```csharp
+var ignoredSegments = new[] { "/swagger", "/favicon", "/healthz", "/metrics" };
+```
+
+Если нужно игнорировать какие-то дополнительные запросы, то их можно добавить в список в этом классе.
+
+## Настройки подключения к Jaeger
+
+Для подключения к Jaeger нужно добавить секцию *Jaeger* в файл настроек:
+
+```json
+"Jaeger": {
+  "AgentHost": "localhost",
+  "AgentPort": 6831
+}
+```
+
+## Интеграция OpenTelemetry с JaegerTracing
 Для интеграции нужно использовать класс [JaegerPropagator](https://github.com/open-telemetry/opentelemetry-dotnet/blob/1da5b8623c2bc82fe3681e3c082a6b8e685b66b9/src/OpenTelemetry.Extensions.Propagators/JaegerPropagator.cs). Если этого класса еще не в текущем релизе, можно использовать этот класс из исходников. После релиза он должен появиться в пакете [OpenTelemetry.Extensions.Propagators](https://www.nuget.org/packages/OpenTelemetry.Extensions.Propagators). 
 
 [Пример](https://github.com/open-telemetry/opentelemetry-dotnet/blob/25cfa1721fd8d55ca5e9ff55a8ac610bba9d69d1/examples/MicroserviceExample/Utils/Messaging/MessageSender.cs#77) использования Propagator для RabbitMq.
