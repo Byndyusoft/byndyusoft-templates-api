@@ -4,8 +4,10 @@ namespace Byndyusoft.Template.Api
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.Hosting;
     using Serilog;
-    using Byndyusoft.Tracing;
     using Byndyusoft.MaskedSerialization.Serilog.Extensions;
+    using Infrastructure.OpenTelemetry;
+    using Microsoft.Extensions.Configuration;
+    using Npgsql;
 
     public class Program
     {
@@ -16,20 +18,24 @@ namespace Byndyusoft.Template.Api
 
         public static IHostBuilder CreateHostBuilder(string[] args)
         {
+            var serviceName = typeof(Program).Assembly.GetName().Name;
+
             return Host.CreateDefaultBuilder(args)
                        .ConfigureServices((context, services) =>
-                       {
-                           services.AddOpenTracingServices(options => options.AddDefaultIgnorePatterns()
-                                                                             .WithDefaultOperationNameResolver())
-                                   .AddJaegerTracer(context.Configuration);
-                       })
+                                              {
+                                                  services.AddOpenTelemetry(serviceName,
+                                                                            context.Configuration.GetSection("Jaeger").Bind,
+                                                                            builder => builder.AddNpgsql());
+                                              })
                        .ConfigureWebHostDefaults(webBuilder =>
-                       {
-                           webBuilder.UseStartup<Startup>();
-                           webBuilder.UseSerilog((context, configuration) => configuration
-                               .UseDefaultSettings(context.Configuration, "Template project")
-                               .WithMaskingPolicy());
-                       });
+                                                     {
+                                                         webBuilder.UseStartup<Startup>();
+                                                         webBuilder.UseSerilog((context, configuration) => configuration
+                                                                                                           .UseDefaultSettings(context.Configuration, serviceName)
+                                                                                                           .UseOpenTelemetryTraces()
+                                                                                                           .WriteToOpenTelemetry()
+                                                                                                           .WithMaskingPolicy());
+                                                     });
         }
     }
 }
