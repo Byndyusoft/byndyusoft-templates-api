@@ -3,14 +3,12 @@
     using System;
     using System.Net;
     using Microsoft.AspNetCore.Builder;
-    using Prometheus;
 
     internal static class ApplicationBuilderExtensions
     {
         public static IApplicationBuilder UseRequestsMetrics(this IApplicationBuilder app)
         {
             return app
-                   .UseHttpMetrics()
                    .Use(
                        async (context, next) =>
                        {

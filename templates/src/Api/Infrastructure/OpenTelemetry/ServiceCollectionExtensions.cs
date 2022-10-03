@@ -2,6 +2,7 @@
 
 using System;
 using global::OpenTelemetry.Exporter;
+using global::OpenTelemetry.Metrics;
 using global::OpenTelemetry.Resources;
 using global::OpenTelemetry.Trace;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,7 +13,8 @@ public static class ServiceCollectionExtensions
         this IServiceCollection services,
         string? serviceName,
         Action<JaegerExporterOptions> configureJaeger,
-        Action<TracerProviderBuilder>? configureBuilder = null)
+        Action<TracerProviderBuilder>? configureBuilder = null,
+        Action<MeterProviderBuilder>? configureMeter = null)
     {
         return services
             .AddOpenTelemetryTracing
@@ -20,9 +22,16 @@ public static class ServiceCollectionExtensions
                      {
                          builder
                              .SetResourceBuilder(ResourceBuilder.CreateDefault().AddService(serviceName))
-                             .AddDefaultIgnorePatterns()
+                             .AddAspNetCoreInstrumentation(o => o.AddDefaultIgnorePatterns())
                              .AddJaegerExporter(configureJaeger);
                          configureBuilder?.Invoke(builder);
-                     });
+                     })
+            .AddOpenTelemetryMetrics(builder =>
+                                         {
+                                             builder.AddPrometheusExporter()
+                                                    .AddRuntimeInstrumentation()
+                                                    .AddAspNetCoreInstrumentation();
+                                             configureMeter?.Invoke(builder);
+                                         });
     }
 }
