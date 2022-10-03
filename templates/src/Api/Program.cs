@@ -25,7 +25,8 @@ namespace Byndyusoft.Template.Api
                                               {
                                                   services.AddOpenTelemetry(serviceName,
                                                                             context.Configuration.GetSection("Jaeger").Bind,
-                                                                            builder => builder.AddNpgsql());
+                                                                            builder => builder.AddNpgsql(),
+                                                                            builder => builder.AddTemplateMetrics());
                                               })
                        .ConfigureWebHostDefaults(webBuilder =>
                                                      {

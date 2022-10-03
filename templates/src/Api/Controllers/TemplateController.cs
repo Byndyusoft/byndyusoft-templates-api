@@ -1,9 +1,11 @@
 ﻿namespace Byndyusoft.Template.Api.Controllers
 {
+    using System.Diagnostics;
     using System.Net;
     using System.Net.Mime;
     using Contracts.TemplateEntity;
     using Domain.Services.Interfaces;
+    using Infrastructure.OpenTelemetry;
     using Microsoft.AspNetCore.Mvc;
 
     /// <summary>
@@ -37,7 +39,12 @@
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(TemplateDto))]
         public ActionResult GetTemplate(int id)
         {
+            var stopwatch = Stopwatch.StartNew();
+
             var resultId = _service.GetId(id);
+
+            stopwatch.Stop();
+            ApiTemplateMetrics.ObserveDuration(id, stopwatch.Elapsed);
 
             return resultId.HasValue
                        ? Ok(new TemplateDto { Id = resultId.Value })
