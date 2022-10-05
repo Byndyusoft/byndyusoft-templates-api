@@ -23,6 +23,7 @@ public static class ServiceCollectionExtensions
                          builder
                              .SetResourceBuilder(ResourceBuilder.CreateDefault().AddService(serviceName))
                              .AddAspNetCoreInstrumentation(o => o.AddDefaultIgnorePatterns())
+                             .AddHttpClientInstrumentation()
                              .AddJaegerExporter(configureJaeger);
                          configureBuilder?.Invoke(builder);
                      })
@@ -30,7 +31,8 @@ public static class ServiceCollectionExtensions
                                          {
                                              builder.AddPrometheusExporter()
                                                     .AddRuntimeInstrumentation()
-                                                    .AddAspNetCoreInstrumentation();
+                                                    .AddAspNetCoreInstrumentation()
+                                                    .AddHttpClientInstrumentation();
                                              configureMeter?.Invoke(builder);
                                          });
     }
