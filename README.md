@@ -8,7 +8,7 @@
  - Пакет для работы с БД [Byndyusoft.Data.Relational](https://github.com/Byndyusoft/Byndyusoft.Data.Relational)
  - Пакет для маскирования чувствительных данных в логах и в трассировке [Byndyusoft.MaskedSerialization](https://github.com/Byndyusoft/Byndyusoft.MaskedSerialization)
  - Хэлчеки через метод /healthz
- - Подключены основные технические метрики Prometheus
+ - Подключены OpenTelemetry Tracing & Metrics. Добавлены основные инструменты для метрик. Добавлен пример для метрик приложения.
 
 Проекты:
 - Domain - бизнес-логика приложения
@@ -16,8 +16,9 @@
 - Migrator - мигратор базы данных на основе https://github.com/fluentmigrator/fluentmigrator
 - Api - веб-апи приложения
 - Api.Client - клиент для веб-апи, расширение для подключения клиента в потребителе
-- Api.Contracts - Контракты для веб-апи и клиента
+- Api.Contracts - контракты для веб-апи и клиента
 - IntegrationTests - интеграционные тесты на веб-апи
+- UnitTests - юнит-тесты
 
 # Как использовать шаблон?
 
