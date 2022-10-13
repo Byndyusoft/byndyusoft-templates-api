@@ -1,7 +1,6 @@
 namespace Byndyusoft.Template.Api
 {
     using System.Text.Json.Serialization;
-    using Infrastructure.Metrics;
     using Infrastructure.Swagger;
     using Infrastructure.Versioning;
     using Installers;
@@ -60,7 +59,6 @@ namespace Byndyusoft.Template.Api
                 .UseHealthChecks("/healthz")
                 .UseOpenTelemetryPrometheusScrapingEndpoint()
                 .UseRouting()
-                .UseRequestsMetrics()
                 .UseEndpoints(endpoints => endpoints.MapControllers());
         }
     }
