@@ -51,6 +51,16 @@
 
 Проект готов к использованию!
 
+# Пример с метриками
+
+В коде был добавлен пример с метриками, которые определяются в классе *ApiTemplateMetrics.cs*.
+
+В этом классе добавлены поля (терминология взята из [OpenTelemetry Metrics API](https://opentelemetry.io/docs/reference/specification/metrics/api/)):
+
+ - *Name* - наименование meter (измеритель).
+ - *DurationName* - наименование instrument (инструмента).
+ - *DurationBuckets* - границы бакетов, используются в настройке отображения метрик в классе *MeterProviderBuilderExtensions.cs*.
+
 # Настройки проекта
 
 ## Фильтрация запросов для трассировки
