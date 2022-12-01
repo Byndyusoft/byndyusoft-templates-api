@@ -1,7 +1,6 @@
 namespace Byndyusoft.Template.Api
 {
     using System.Text.Json.Serialization;
-    using Infrastructure.Metrics;
     using Infrastructure.Swagger;
     using Infrastructure.Versioning;
     using Installers;
@@ -12,7 +11,6 @@ namespace Byndyusoft.Template.Api
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
     using Npgsql;
-    using Prometheus;
 
     public class Startup
     {
@@ -59,9 +57,8 @@ namespace Byndyusoft.Template.Api
 
             app
                 .UseHealthChecks("/healthz")
-                .UseMetricServer()
+                .UseOpenTelemetryPrometheusScrapingEndpoint()
                 .UseRouting()
-                .UseRequestsMetrics()
                 .UseEndpoints(endpoints => endpoints.MapControllers());
         }
     }
