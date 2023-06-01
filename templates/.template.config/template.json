@@ -6,16 +6,16 @@
    ],
    "projectUrl":"https://github.com/Byndyusoft/Byndyusoft.TemplateApi",
    "description":"",
-   "name":"Byndyusoft api template",
-   "defaultName":"Byndyusoft.Template.Api",
-   "identity":"Byndyusoft.Template.Api",
+   "name":"Byndyusoft Web API",
+   "defaultName":"Byndyusoft.DotNet.Web.ProjectTemplate",
+   "identity":"Byndyusoft.DotNet.Web.ProjectTemplate",
    "groupIdentity":"bs",
    "tags":{
       "language":"C#",
       "type":"project"
    },
    "shortName":"bsapi",
-   "sourceName":"Byndyusoft.Template",
+   "sourceName":"Byndyusoft.DotNet.Web.ProjectTemplate",
    "symbols":{
       "nameLower":{
          "type":"generated",
