@@ -2,12 +2,12 @@
 
 	<PropertyGroup>
 		<PackageType>Template</PackageType>
-		<PackageVersion>1.1.2</PackageVersion>
+		<PackageVersion>1.2.0</PackageVersion>
 		<NoDefaultExcludes>true</NoDefaultExcludes>
-		<PackageId>Byndyusoft.Template</PackageId>
-		<Title>Byndyusoft.Template</Title>
+		<PackageId>Byndyusoft.DotNet.Web.ProjectTemplate</PackageId>
+		<Title>Byndyusoft.DotNet.Web.ProjectTemplate</Title>
 		<Authors>Byndyusoft</Authors>
-		<Description>Byndyusoft api template project</Description>
+		<Description>Byndyusoft Web API</Description>
 		<PackageTags>dotnet-new;templates</PackageTags>
 		<TargetFramework>netstandard2.1</TargetFramework>
 
