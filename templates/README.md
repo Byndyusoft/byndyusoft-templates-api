@@ -20,7 +20,7 @@ Make sure you have installed all of the following prerequisites on your developm
 Database connection settings.
 
 Example:
-```shell
+```json
 "ConnectionStrings": {
     "Main": "Server=localhost;Port=5432;Database=localhost;User Id=user1;Password=password1;POOLING=True;MINPOOLSIZE=1;MAXPOOLSIZE=1024;"
   }
@@ -30,7 +30,7 @@ Example:
 Logging settings.
 
 Example:
-```shell
+```json
 "Logging": {
     "LogLevel": {
       "Default": "Information",
@@ -43,7 +43,7 @@ Example:
 Jaeger connection settings.
 
 Example:
-```shell
+```json
 "Jaeger": {
     "AgentHost": "localhost",
     "AgentPort": 6831
