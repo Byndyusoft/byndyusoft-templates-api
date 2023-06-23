@@ -54,9 +54,9 @@ Example:
 
 ### src
 
-- Api - Web API Applications
-- Api.Client - Client for Web API, extension for client registration in consumer
-- Api.Contracts - Contracts for Web API and client
+- Api - Web API Application
+- Api.Client - Web API client and DI registration for consumers
+- Api.Contracts - Web API client contracts
 - DataAccess - Data access layer
 - Domain - Application business logic
 - Migrator - Database migrator based on https://github.com/fluentmigrator/fluentmigrator
