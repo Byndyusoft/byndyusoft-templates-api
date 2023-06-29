@@ -32,7 +32,7 @@ jobs:
       - name: publish
         uses: alirezanet/publish-nuget@v3.0.0
         with:
-          PROJECT_FILE_PATH: Byndyusoft.TemplateApi.csproj
+          PROJECT_FILE_PATH: Byndyusoft.DotNet.Web.ProjectTemplate.csproj
           VERSION_REGEX: ^\s*<PackageVersion>(.*)<\/PackageVersion>\s*$
           TAG_COMMIT: false
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
