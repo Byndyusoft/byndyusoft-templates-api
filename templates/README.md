@@ -1,4 +1,4 @@
-﻿# Byndyusoft.Template.Api
+﻿# Byndyusoft.DotNet.Web.ProjectTemplate
 ASP.NET Core MVC tracing.
 
 ## Usages
