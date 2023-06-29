@@ -7,7 +7,7 @@
 		<PackageId>Byndyusoft.DotNet.Web.ProjectTemplate</PackageId>
 		<Title>Byndyusoft.DotNet.Web.ProjectTemplate</Title>
 		<Authors>Byndyusoft</Authors>
-		<Description>Byndyusoft Web API</Description>
+		<Description>Byndyusoft Web API template</Description>
 		<PackageTags>dotnet-new;templates</PackageTags>
 		<TargetFramework>netstandard2.1</TargetFramework>
 
