@@ -25,29 +25,39 @@
 ## Установка шаблона из nuget.org
 
 ### Установка шаблона из nuget в консоли Windows:
-`dotnet new --install Byndyusoft.Template`
+```shell
+dotnet new --install Byndyusoft.DotNet.Web.ProjectTemplate
+```
 
 В списке должен появиться шаблон с коротким именем bsapi.
 
 ### Создание нового сервиса из шаблона (выполнять в пустой директории)
-`dotnet new bsapi -n {Название сервиса}`
+```shell
+dotnet new bsapi -n {Название сервиса}
+```
 
 Проект готов к использованию!
 
 ## Установка шаблона из файла пакета .nupkg.
 
 ### Создание nuget пакета для шаблона в корне:
-`dotnet pack`
+```shell
+dotnet pack
+```
 
 Вместо создания пакета его можно скачать из [nuget.org](https://www.nuget.org/packages/Byndyusoft.Template).
 
 ### Установка шаблона из созданного нами пакета:
-`dotnet new --install .\Byndyusoft.Template.1.1.0.nupkg`
+```shell
+dotnet new --install .\Byndyusoft.Template.1.3.0.nupkg
+```
 
-Версия может отличаться.
+**Примечание:** Версия может отличаться.
 
 ### Создание нового сервиса из шаблона (выполнять в пустой директории)
-`dotnet new bsapi -n {Название сервиса}`
+```shell
+dotnet new bsapi -n {Название сервиса}
+```
 
 Проект готов к использованию!
 
