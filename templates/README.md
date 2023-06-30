@@ -65,13 +65,6 @@ Example:
 - IntegrationTests - Web API Integration Tests
 - UnitTests - Unit Tests
 
-## Package development lifecycle
-
-- Implement package logic in `src`
-- Add or addapt unit-tests (prefer before and simultaneously with coding) in `tests`
-- Add or change the documentation as needed
-- Open pull request in the correct branch. Target the project's `master` branch
-
 # Maintainers
 
 [github.maintain@byndyusoft.com](mailto:github.maintain@byndyusoft.com)
