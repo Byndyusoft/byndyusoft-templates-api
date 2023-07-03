@@ -49,7 +49,7 @@ dotnet pack
 
 ### Установка шаблона из созданного нами пакета:
 ```shell
-dotnet new --install .\Byndyusoft.Template.1.3.3.nupkg
+dotnet new --install .\Byndyusoft.Template.1.3.4.nupkg
 ```
 
 **Примечание:** Версия может отличаться.
