@@ -1,11 +1,11 @@
 ﻿# Byndyusoft.DotNet.Web.ProjectTemplate
 ASP.NET Core MVC tracing.
 
-## Usages
+## Description
 
-```shell
-Sample
-```
+Short service description. (Best picture storage in the world) <br>
+API main functional. (Provides easiest way to store and share pictures) <br>
+Anything important to you...
 
 ## Prerequisites
 
