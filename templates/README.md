@@ -5,8 +5,8 @@
 ## Description
 
 - Short service description. (For example: Best picture storage in the world)
-- API main functional. (For example: Provides easiest way to store and share pictures)
-- Anything important to you...
+- API main functions. (For example: Provides easiest way to store and share pictures)
+- Anything important to potential service consumers...
 
 ## Prerequisites
 
