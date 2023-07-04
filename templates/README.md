@@ -1,11 +1,12 @@
 ﻿# Byndyusoft.DotNet.Web.ProjectTemplate
-ASP.NET Core MVC tracing.
+
+## Short service name (For example: PictureStorageGateway)
 
 ## Description
 
-Short service description. (Best picture storage in the world) <br>
-API main functional. (Provides easiest way to store and share pictures) <br>
-Anything important to you...
+- Short service description. (For example: Best picture storage in the world)
+- API main functions. (For example: Provides easiest way to store and share pictures)
+- Anything important to potential service consumers...
 
 ## Prerequisites
 
