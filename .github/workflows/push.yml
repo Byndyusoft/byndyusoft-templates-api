@@ -18,10 +18,10 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
 
-      - name: install dotnet 2.1
+      - name: install dotnet 2.0
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: 2.1.x
+          dotnet-version: 2.0.x
 
       - name: install packages
         run: dotnet restore
