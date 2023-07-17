@@ -23,3 +23,6 @@ jobs:
 
       - name: build
         run: dotnet build
+        
+      - name: pack
+        run: dotnet pack
