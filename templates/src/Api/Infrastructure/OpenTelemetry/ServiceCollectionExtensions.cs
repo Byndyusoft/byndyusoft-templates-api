@@ -16,8 +16,9 @@ public static class ServiceCollectionExtensions
         Action<TracerProviderBuilder>? configureBuilder = null,
         Action<MeterProviderBuilder>? configureMeter = null)
     {
-        return services
-            .AddOpenTelemetryTracing
+        services
+            .AddOpenTelemetry()
+            .WithTracing
                 (builder =>
                      {
                          builder
@@ -27,13 +28,15 @@ public static class ServiceCollectionExtensions
                              .AddJaegerExporter(configureJaeger);
                          configureBuilder?.Invoke(builder);
                      })
-            .AddOpenTelemetryMetrics(builder =>
-                                         {
-                                             builder.AddPrometheusExporter()
-                                                    .AddRuntimeInstrumentation()
-                                                    .AddAspNetCoreInstrumentation()
-                                                    .AddHttpClientInstrumentation();
-                                             configureMeter?.Invoke(builder);
-                                         });
+            .WithMetrics(builder =>
+                             {
+                                 builder.AddPrometheusExporter()
+                                        .AddRuntimeInstrumentation()
+                                        .AddAspNetCoreInstrumentation()
+                                        .AddHttpClientInstrumentation();
+                                 configureMeter?.Invoke(builder);
+                             });
+
+        return services;
     }
 }
