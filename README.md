@@ -33,8 +33,9 @@ dotnet new --install Byndyusoft.DotNet.Web.ProjectTemplate
 
 ### Создание нового сервиса из шаблона (выполнять в пустой директории)
 ```shell
-dotnet new bsapi -n {Название сервиса}
+dotnet new bsapi -o {Название директории}
 ```
+**Примечание:** Название сервиса будет совпадать с названием директории. С полным списком опций, вы можете ознакомиться [тут](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-new).
 
 Проект готов к использованию!
 
@@ -59,7 +60,7 @@ dotnet new --install .\Byndyusoft.Template.1.3.6.nupkg
 ```shell
 dotnet new bsapi -o {Название директории}
 ```
-**Примечание:** Название сервиса будет совпадать с названием директории.
+**Примечание:** Название сервиса будет совпадать с названием директории. С полным списком опций, вы можете ознакомиться [тут](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-new).
 
 Проект готов к использованию!
 
