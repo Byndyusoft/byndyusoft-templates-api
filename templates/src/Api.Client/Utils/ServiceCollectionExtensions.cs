@@ -11,13 +11,13 @@
         /// <summary>
         ///     Для работы клиенты необходимо указать настройки подключения к апи в appsetting
         /// </summary>
-        /// <param name="services"></param>
-        /// <param name="configuration"></param>
         public static void AddTemplateClient(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddHttpClient<ITemplateClient, TemplateClient>();
+            services
+                .AddOptions()
+                .Configure<TemplateApiSettings>(configuration.GetSection(nameof(TemplateApiSettings)));
 
-            services.Configure<TemplateApiSettings>(configuration.GetSection(nameof(TemplateApiSettings)));
+            services.AddHttpClient<ITemplateClient, TemplateClient>();
         }
     }
 }

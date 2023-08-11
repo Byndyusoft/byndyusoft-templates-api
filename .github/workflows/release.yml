@@ -13,16 +13,6 @@ jobs:
       - name: checkout
         uses: actions/checkout@master
         
-      - name: install dotnet 3.1
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: 3.1.x
-
-      - name: install dotnet 5.0
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: 5.0.x
-          
       - name: install packages
         run: dotnet restore
           
@@ -30,9 +20,9 @@ jobs:
         run: dotnet build
         
       - name: publish
-        uses: rohith/publish-nuget@v2
+        uses: alirezanet/publish-nuget@v3.0.0
         with:
-          PROJECT_FILE_PATH: Byndyusoft.TemplateApi.csproj
+          PROJECT_FILE_PATH: Byndyusoft.DotNet.Web.ProjectTemplate.csproj
           VERSION_REGEX: ^\s*<PackageVersion>(.*)<\/PackageVersion>\s*$
           TAG_COMMIT: false
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}

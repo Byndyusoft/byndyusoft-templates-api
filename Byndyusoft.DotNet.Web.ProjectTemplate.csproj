@@ -2,14 +2,15 @@
 
 	<PropertyGroup>
 		<PackageType>Template</PackageType>
-		<PackageVersion>1.0.5</PackageVersion>
+		<PackageVersion>1.3.6</PackageVersion>
 		<NoDefaultExcludes>true</NoDefaultExcludes>
-		<PackageId>Byndyusoft.Template</PackageId>
-		<Title>Byndyusoft.Template</Title>
+		<PackageId>Byndyusoft.DotNet.Web.ProjectTemplate</PackageId>
+		<Title>Byndyusoft.DotNet.Web.ProjectTemplate</Title>
 		<Authors>Byndyusoft</Authors>
-		<Description>Byndyusoft api template project</Description>
+		<Description>Byndyusoft Web API template</Description>
 		<PackageTags>dotnet-new;templates</PackageTags>
 		<TargetFramework>netstandard2.1</TargetFramework>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 
 		<IncludeContentInPack>true</IncludeContentInPack>
 		<IncludeBuildOutput>false</IncludeBuildOutput>
@@ -19,7 +20,11 @@
 	<ItemGroup>
 		<Content Include="templates\**\*;" Exclude="templates\**\bin\**;templates\**\obj\**;.vs\**" />
 		<Compile Remove ="**\*" />
-	</ItemGroup>	
+	</ItemGroup>
 
+	<ItemGroup>
+		<None Include="README.md" Pack="true" PackagePath="\"/>
+	</ItemGroup>
+	
 </Project>
 

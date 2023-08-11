@@ -11,15 +11,15 @@
     using OpenTracing.Mock;
     using Xunit;
 
-    public class TemplateClientTests : IClassFixture<ServicesCollectionFixture>, IClassFixture<WebApplicationFactory<Program>>
+    public class TemplateClientTests : IClassFixture<TestServiceProvider>, IClassFixture<WebApplicationFactory<Program>>
     {
         private readonly TemplateClient _templateClient;
 
-        public TemplateClientTests(WebApplicationFactory<Program> factory, ServicesCollectionFixture servicesCollectionFixture)
+        public TemplateClientTests(WebApplicationFactory<Program> factory, TestServiceProvider testServiceProvider)
         {
             var apiSettings = Options.Create(new TemplateApiSettings());
 
-            _templateClient = new TemplateClient(factory.CreateClient(), apiSettings, new MockTracer());
+            _templateClient = new TemplateClient(factory.CreateClient(), new MockTracer(), apiSettings);
         }
 
         [Fact]
