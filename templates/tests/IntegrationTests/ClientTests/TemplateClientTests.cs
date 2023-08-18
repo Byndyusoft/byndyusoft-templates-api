@@ -35,7 +35,7 @@
                                {
                                    TestId = "TemplateClient",
                                    Description = "TemplateClient",
-                                   //TestCaseFolder = "TemplateClient",
+                                   TestCaseFolder = "TemplateClient",
                                    Parameters = new TestCaseParameters
                                                     {
                                                         TemplateId = 1
