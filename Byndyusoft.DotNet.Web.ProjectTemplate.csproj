@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<PackageType>Template</PackageType>
-		<PackageVersion>1.3.6</PackageVersion>
+		<PackageVersion>1.3.7</PackageVersion>
 		<NoDefaultExcludes>true</NoDefaultExcludes>
 		<PackageId>Byndyusoft.DotNet.Web.ProjectTemplate</PackageId>
 		<Title>Byndyusoft.DotNet.Web.ProjectTemplate</Title>
@@ -18,12 +18,13 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<Compile Include="templates\tests\IntegrationTests\ReadmeGeneration\ReadmeGenerationTests.cs" />
 		<Content Include="templates\**\*;" Exclude="templates\**\bin\**;templates\**\obj\**;.vs\**" />
-		<Compile Remove ="**\*" />
+		<Compile Remove="**\*" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Include="README.md" Pack="true" PackagePath="\"/>
+		<None Include="README.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
 	
 </Project>
