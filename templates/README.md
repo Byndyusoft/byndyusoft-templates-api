@@ -22,9 +22,11 @@ Database connection settings.
 
 Example:
 ```json
-"ConnectionStrings": {
+{
+  "ConnectionStrings": {
     "Main": "Server=localhost;Port=5432;Database=localhost;User Id=user1;Password=password1;POOLING=True;MINPOOLSIZE=1;MAXPOOLSIZE=1024;"
   }
+}
 ```
 
 ### Logging
@@ -32,12 +34,15 @@ Logging settings.
 
 Example:
 ```json
-"Logging": {
+{
+  "Logging": {
     "LogLevel": {
       "Default": "Information",
       "Microsoft": "Warning",
       "Microsoft.Hosting.Lifetime": "Information"
     }
+  }
+}
 ```
 
 ### Jaeger
@@ -45,10 +50,11 @@ Jaeger connection settings.
 
 Example:
 ```json
-"Jaeger": {
-    "AgentHost": "localhost",
-    "AgentPort": 6831
+{
+  "Jaeger": {
+    "Endpoint": "http://localhost:4317"
   }
+}
 ```
 
 ## General folders layout
