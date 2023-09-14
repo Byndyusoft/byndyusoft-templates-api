@@ -46,12 +46,12 @@ Example:
 ```
 
 ### OpenTelemetry
-OpenTelemetry connection settings.
+OpenTelemetry Exporter settings.
 
 Example:
 ```json
 {
-  "OpenTelemetry": {
+  "OtlpExporterOptions": {
     "Endpoint": "http://localhost:4317"
   }
 }
