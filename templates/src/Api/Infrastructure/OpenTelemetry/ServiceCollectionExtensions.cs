@@ -12,7 +12,7 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection AddOpenTelemetry(
         this IServiceCollection services,
         string? serviceName,
-        Action<JaegerExporterOptions> configureJaeger,
+        Action<OtlpExporterOptions> configureOtlp,
         Action<TracerProviderBuilder>? configureBuilder = null,
         Action<MeterProviderBuilder>? configureMeter = null)
     {
@@ -25,7 +25,7 @@ public static class ServiceCollectionExtensions
                              .SetResourceBuilder(ResourceBuilder.CreateDefault().AddService(serviceName))
                              .AddAspNetCoreInstrumentation(o => o.AddDefaultIgnorePatterns())
                              .AddHttpClientInstrumentation()
-                             .AddJaegerExporter(configureJaeger);
+                             .AddOtlpExporter(configureOtlp);
                          configureBuilder?.Invoke(builder);
                      })
             .WithMetrics(builder =>
