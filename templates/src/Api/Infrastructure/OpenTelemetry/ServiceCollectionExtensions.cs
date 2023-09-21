@@ -22,6 +22,7 @@ public static class ServiceCollectionExtensions
                 (builder =>
                      {
                          builder
+                             .AddSource(serviceName)
                              .SetResourceBuilder(ResourceBuilder.CreateDefault().AddService(serviceName))
                              .AddAspNetCoreInstrumentation(o => o.AddDefaultIgnorePatterns())
                              .AddHttpClientInstrumentation()

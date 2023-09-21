@@ -12,7 +12,6 @@
     using FluentAssertions;
     using Microsoft.AspNetCore.Mvc.Testing;
     using Microsoft.Extensions.Options;
-    using OpenTracing.Mock;
     using TestCases;
     using Xunit;
 
@@ -20,11 +19,11 @@
     {
         private readonly TemplateClient _templateClient;
 
-        public TemplateClientTests(WebApplicationFactory<Program> factory, TestServiceProvider testServiceProvider)
+        public TemplateClientTests(WebApplicationFactory<Program> factory)
         {
             var apiSettings = Options.Create(new TemplateApiSettings());
 
-            _templateClient = new TemplateClient(factory.CreateClient(), new MockTracer(), apiSettings);
+            _templateClient = new TemplateClient(factory.CreateClient(), apiSettings);
         }
 
         [Fact]
