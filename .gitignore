@@ -3,3 +3,4 @@ _ReSharper.*/
 **/obj/*
 **/.vs/*
 **.user
+/.idea

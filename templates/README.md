@@ -15,6 +15,10 @@ Make sure you have installed all of the following prerequisites on your developm
 - Git - [Download & Install Git](https://git-scm.com/downloads). OSX and Linux machines typically have this already installed.
 - .NET Core (version 6.0 or higher) - [Download & Install .NET Core](https://dotnet.microsoft.com/download/dotnet-core/6.0).
 
+## Deployment
+
+Service deployment description
+
 ## Configuration
 
 ### ConnectionStrings
