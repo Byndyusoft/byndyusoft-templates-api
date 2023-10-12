@@ -4,10 +4,6 @@
 
 ## Description
 
-- [Service description in documentation](Reference to documentation)
-
-OR (Remove excess)
-
 - Short service description. (For example: Best picture storage in the world)
 - API main functions. (For example: Provides easiest way to store and share pictures)
 - Anything important to potential service consumers...
@@ -21,11 +17,7 @@ Make sure you have installed all of the following prerequisites on your developm
 
 ## Deployment
 
-[Service deployment information in documentation](Reference to documentation)
-
-OR (Remove excess)
-
-Description of service deployment to different environments
+Service deployment description
 
 ## Configuration
 
