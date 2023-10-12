@@ -4,6 +4,10 @@
 
 ## Description
 
+- [Service description in documentation](Reference to documentation)
+
+OR (Remove excess)
+
 - Short service description. (For example: Best picture storage in the world)
 - API main functions. (For example: Provides easiest way to store and share pictures)
 - Anything important to potential service consumers...
@@ -14,6 +18,14 @@ Make sure you have installed all of the following prerequisites on your developm
 
 - Git - [Download & Install Git](https://git-scm.com/downloads). OSX and Linux machines typically have this already installed.
 - .NET Core (version 6.0 or higher) - [Download & Install .NET Core](https://dotnet.microsoft.com/download/dotnet-core/6.0).
+
+## Deployment
+
+[Service deployment information in documentation](Reference to documentation)
+
+OR (Remove excess)
+
+Description of service deployment to different environments
 
 ## Configuration
 
