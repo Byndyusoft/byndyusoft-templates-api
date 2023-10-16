@@ -29,17 +29,11 @@
         public async Task<TemplateDto> GetTemplate(int templateId, CancellationToken cancellationToken)
         {
             using var activitySource = _myActivitySource.StartActivity();
+
+            activitySource?.AddTag("template.id", templateId);
             
-            try
-            {
-                var templateDto = await GetAsync<TemplateDto>($"{ApiPrefix}/{templateId}", cancellationToken);
-                return templateDto;
-            }
-            catch (Exception)
-            {
-                activitySource?.SetTag("Error", true);
-                throw;
-            }
+            var templateDto = await GetAsync<TemplateDto>($"{ApiPrefix}/{templateId}", cancellationToken);
+            return templateDto;
         }
     }
 
