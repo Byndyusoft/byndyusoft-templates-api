@@ -1,6 +1,7 @@
 ﻿namespace Byndyusoft.Template.IntegrationTests.ClientTests
 {
     using System.Reflection;
+    using System.Threading;
     using System.Threading.Tasks;
     using Api;
     using Api.Client.Clients;
@@ -22,8 +23,9 @@
         public TemplateClientTests(WebApplicationFactory<Program> factory, TestServiceProvider testServiceProvider)
         {
             var apiSettings = Options.Create(new TemplateApiSettings());
+            var openTelemetrySettings = Options.Create(new OpenTelemetrySettings { SourceName = "SourceName" });
 
-            _templateClient = new TemplateClient(factory.CreateClient(), apiSettings);
+            _templateClient = new TemplateClient(factory.CreateClient(), apiSettings, openTelemetrySettings);
         }
 
         [Fact]
@@ -50,7 +52,7 @@
                                };
 
             //Act
-            var templateDto = await _templateClient.GetTemplate(testCase.Parameters.TemplateId);
+            var templateDto = await _templateClient.GetTemplate(testCase.Parameters.TemplateId, CancellationToken.None);
 
             //Assert
             templateDto.Should().NotBeNull();
