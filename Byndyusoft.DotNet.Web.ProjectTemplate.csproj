@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<PackageType>Template</PackageType>
-		<PackageVersion>2.1.0-rc1</PackageVersion>
+		<PackageVersion>2.1.0</PackageVersion>
 		<NoDefaultExcludes>true</NoDefaultExcludes>
 		<PackageId>Byndyusoft.DotNet.Web.ProjectTemplate</PackageId>
 		<Title>Byndyusoft.DotNet.Web.ProjectTemplate</Title>
