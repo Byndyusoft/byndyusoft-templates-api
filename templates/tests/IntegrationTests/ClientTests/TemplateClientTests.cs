@@ -23,9 +23,8 @@
         public TemplateClientTests(WebApplicationFactory<Program> factory, TestServiceProvider testServiceProvider)
         {
             var apiSettings = Options.Create(new TemplateApiSettings());
-            var openTelemetrySettings = Options.Create(new OpenTelemetrySettings { SourceName = "SourceName" });
 
-            _templateClient = new TemplateClient(factory.CreateClient(), apiSettings, openTelemetrySettings);
+            _templateClient = new TemplateClient(factory.CreateClient(), apiSettings);
         }
 
         [Fact]

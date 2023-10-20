@@ -11,12 +11,11 @@
         /// <summary>
         ///     Для работы клиенты необходимо указать настройки подключения к апи в appsetting
         /// </summary>
-        public static void AddTemplateClient(this IServiceCollection services, IConfiguration configuration, string serviceName)
+        public static void AddTemplateClient(this IServiceCollection services, IConfiguration configuration)
         {
             services
                 .AddOptions()
-                .Configure<TemplateApiSettings>(configuration.GetSection(nameof(TemplateApiSettings)))
-                .Configure<OpenTelemetrySettings>(settings => settings.SourceName = serviceName);
+                .Configure<TemplateApiSettings>(configuration.GetSection(nameof(TemplateApiSettings)));
 
             services.AddHttpClient<ITemplateClient, TemplateClient>();
         }
