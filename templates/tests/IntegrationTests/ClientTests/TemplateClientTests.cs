@@ -1,6 +1,7 @@
 ﻿namespace Byndyusoft.Template.IntegrationTests.ClientTests
 {
     using System.Reflection;
+    using System.Threading;
     using System.Threading.Tasks;
     using Api;
     using Api.Client.Clients;
@@ -12,7 +13,6 @@
     using FluentAssertions;
     using Microsoft.AspNetCore.Mvc.Testing;
     using Microsoft.Extensions.Options;
-    using OpenTracing.Mock;
     using TestCases;
     using Xunit;
 
@@ -24,7 +24,7 @@
         {
             var apiSettings = Options.Create(new TemplateApiSettings());
 
-            _templateClient = new TemplateClient(factory.CreateClient(), new MockTracer(), apiSettings);
+            _templateClient = new TemplateClient(factory.CreateClient(), apiSettings);
         }
 
         [Fact]
@@ -51,7 +51,7 @@
                                };
 
             //Act
-            var templateDto = await _templateClient.GetTemplate(testCase.Parameters.TemplateId);
+            var templateDto = await _templateClient.GetTemplate(testCase.Parameters.TemplateId, CancellationToken.None);
 
             //Assert
             templateDto.Should().NotBeNull();
