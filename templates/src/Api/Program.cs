@@ -7,7 +7,9 @@ namespace Byndyusoft.Template.Api
     using Byndyusoft.MaskedSerialization.Serilog.Extensions;
     using Infrastructure.OpenTelemetry;
     using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
     using Npgsql;
+    using Serilog.Configuration;
 
     public class Program
     {
@@ -23,6 +25,10 @@ namespace Byndyusoft.Template.Api
             return Host.CreateDefaultBuilder(args)
                        .ConfigureServices((context, services) =>
                                               {
+                                                  services.ConfigureStaticTelemetryItemCollector()
+                                                         .WithBuildConfiguration()
+                                                         .WithAspNetCoreEnvironment()
+                                                         .WithServiceName(serviceName);
                                                   services.AddOpenTelemetry(serviceName,
                                                                             context.Configuration.GetSection("OtlpExporterOptions").Bind,
                                                                             builder => builder.AddNpgsql(),
@@ -32,7 +38,9 @@ namespace Byndyusoft.Template.Api
                                                      {
                                                          webBuilder.UseStartup<Startup>();
                                                          webBuilder.UseSerilog((context, configuration) => configuration
-                                                                                                           .UseDefaultSettings(context.Configuration, serviceName)
+                                                                                                           .UseDefaultSettings(context.Configuration)
+                                                                                                           .Enrich.WithStaticTelemetryItems()
+                                                                                                           .Enrich.WithPropertyDataAccessor()
                                                                                                            .UseOpenTelemetryTraces()
                                                                                                            .WriteToOpenTelemetry()
                                                                                                            .WithMaskingPolicy());
