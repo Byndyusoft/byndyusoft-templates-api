@@ -13,7 +13,7 @@
 Make sure you have installed all of the following prerequisites on your development machine:
 
 - Git - [Download & Install Git](https://git-scm.com/downloads). OSX and Linux machines typically have this already installed.
-- .NET Core (version 6.0 or higher) - [Download & Install .NET Core](https://dotnet.microsoft.com/download/dotnet-core/6.0).
+- .NET Core (version 8.0 or higher) - [Download & Install .NET Core](https://dotnet.microsoft.com/download/dotnet-core/8.0).
 
 ## Deployment
 
