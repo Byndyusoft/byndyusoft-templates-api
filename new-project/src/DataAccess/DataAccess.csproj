@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Byndyusoft.Data.Relational.Abstractions" Version="0.8.0" />
+    <PackageReference Include="Byndyusoft.Data.Relational.Abstractions" Version="0.14.2" />
   </ItemGroup>
 
 </Project>
