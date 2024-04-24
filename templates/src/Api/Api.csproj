@@ -5,7 +5,7 @@
 		<Nullable>enable</Nullable>
 		<PublishDir>/app/out/api</PublishDir>
 		<AssemblyName Condition="'$(SERVICE_NAME)' != ''">$(SERVICE_NAME)</AssemblyName>
-		<AssemblyName Condition="'$(SERVICE_NAME)' == ''">new-project-api</AssemblyName>
+		<AssemblyName Condition="'$(SERVICE_NAME)' == ''">byndyusoft-template-api</AssemblyName>
 		<RootNamespace>Byndyusoft.Template.Api</RootNamespace>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 	</PropertyGroup>
