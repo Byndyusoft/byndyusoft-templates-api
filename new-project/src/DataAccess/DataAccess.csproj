@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+    <AssemblyName>Byndyusoft.Template.DataAccess</AssemblyName>
+    <RootNamespace>Byndyusoft.Template.DataAccess</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Byndyusoft.Data.Relational.Abstractions" Version="0.8.0" />
+  </ItemGroup>
+
+</Project>
