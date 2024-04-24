@@ -1,7 +1,6 @@
 ﻿namespace Byndyusoft.Template.Api.Infrastructure.Versioning
 {
     using Asp.Versioning;
-    using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.DependencyInjection;
 
     public static class ServiceCollectionExtensions
@@ -10,15 +9,17 @@
         {
             return services.AddApiVersioning(options =>
                            {
+                               options.ReportApiVersions = true;
                                options.DefaultApiVersion = ApiVersion.Default;
                                options.AssumeDefaultVersionWhenUnspecified = true;
-                               options.ReportApiVersions = true;
                            })
-                           .AddVersionedApiExplorer(options =>
+                           .AddMvc()
+                           .AddApiExplorer(options =>
                            {
                                options.GroupNameFormat = "'v'VVV";
                                options.SubstituteApiVersionInUrl = true;
-                           });
+                           })
+                           .Services;
         }
     }
 }

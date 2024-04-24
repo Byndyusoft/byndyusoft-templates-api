@@ -1,6 +1,6 @@
 namespace Byndyusoft.Template.Api
 {
-    using Byndyusoft.Logging.Configuration;
+    using Logging.Configuration;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.Hosting;
     using Serilog;
@@ -32,7 +32,7 @@ namespace Byndyusoft.Template.Api
                                                      {
                                                          webBuilder.UseStartup<Startup>();
                                                          webBuilder.UseSerilog((context, configuration) => configuration
-                                                                                                           .UseDefaultSettings(context.Configuration, serviceName)
+                                                                                                           .UseDefaultSettings(context.Configuration)
                                                                                                            .UseOpenTelemetryTraces()
                                                                                                            .WriteToOpenTelemetry()
                                                                                                            .WithMaskingPolicy());
