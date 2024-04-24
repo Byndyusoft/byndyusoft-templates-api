@@ -7,6 +7,7 @@
     using Domain.Services.Interfaces;
     using Infrastructure.OpenTelemetry;
     using Microsoft.AspNetCore.Mvc;
+    using Asp.Versioning;
 
     /// <summary>
     ///     Templates API implementation

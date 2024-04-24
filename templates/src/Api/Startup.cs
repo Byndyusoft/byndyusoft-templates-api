@@ -6,11 +6,11 @@ namespace Byndyusoft.Template.Api
     using Installers;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
-    using Microsoft.AspNetCore.Mvc.ApiExplorer;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
     using Npgsql;
+    using Asp.Versioning.ApiExplorer;
 
     public class Startup
     {

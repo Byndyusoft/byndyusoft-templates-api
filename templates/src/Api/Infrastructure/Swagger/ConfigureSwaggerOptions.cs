@@ -3,7 +3,7 @@
     using System;
     using System.IO;
     using System.Reflection;
-    using Microsoft.AspNetCore.Mvc.ApiExplorer;
+    using Asp.Versioning.ApiExplorer;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Options;
     using Microsoft.OpenApi.Models;
