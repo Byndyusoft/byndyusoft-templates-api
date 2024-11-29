@@ -1,5 +1,6 @@
 ﻿namespace Byndyusoft.Template.Api.Infrastructure.Swagger
 {
+    using Asp.Versioning.ApiExplorer;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Mvc.ApiExplorer;
     using Swashbuckle.AspNetCore.SwaggerUI;
