@@ -28,12 +28,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="FluentMigrator" Version="5.2.0" />
-		<PackageReference Include="FluentMigrator.Runner" Version="5.2.0" />
+		<PackageReference Include="FluentMigrator" Version="6.2.0" />
+		<PackageReference Include="FluentMigrator.Runner" Version="6.2.0" />
 		<PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="8.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
-		<PackageReference Include="Npgsql" Version="8.0.2" />
+		<PackageReference Include="Npgsql" Version="9.0.1" />
 	</ItemGroup>
 
 </Project>

@@ -1,13 +1,13 @@
 namespace Byndyusoft.Template.Api
 {
-    using Logging.Configuration;
-    using Microsoft.AspNetCore.Hosting;
-    using Microsoft.Extensions.Hosting;
-    using Serilog;
     using Byndyusoft.MaskedSerialization.Serilog.Extensions;
     using Infrastructure.OpenTelemetry;
+    using Logging.Configuration;
+    using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.Hosting;
     using Npgsql;
+    using Serilog;
 
     public class Program
     {
@@ -31,12 +31,12 @@ namespace Byndyusoft.Template.Api
                        .ConfigureWebHostDefaults(webBuilder =>
                        {
                            webBuilder.UseStartup<Startup>();
-                           webBuilder.UseSerilog((context, configuration) => configuration
-                                                                             .UseDefaultSettings(context.Configuration)
-                                                                             .UseOpenTelemetryTraces()
-                                                                             .WriteToOpenTelemetry()
-                                                                             .WithMaskingPolicy());
-                       });
+                       })
+                       .UseSerilog((context, configuration) => configuration
+                                                                 .UseDefaultSettings(context.Configuration)
+                                                                 .UseOpenTelemetryTraces()
+                                                                 .WriteToOpenTelemetry()
+                                                                 .WithMaskingPolicy());
         }
     }
 }

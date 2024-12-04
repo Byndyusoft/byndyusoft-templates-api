@@ -18,6 +18,7 @@ public static class ServiceCollectionExtensions
     {
         services
             .AddOpenTelemetry()
+            .ConfigureResource(resource => resource.AddService(serviceName))
             .WithTracing
                 (builder =>
                      {
