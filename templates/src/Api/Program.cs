@@ -10,34 +10,36 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Npgsql;
 using Serilog;
-using System.Text.Json.Serialization;
+using Byndyusoft.Template.Api.Extensions;
 
 var serviceName = typeof(Program).Assembly.GetName().Name;
 var builder = WebApplication.CreateBuilder(args);
-builder.Host.UseSerilog((context, configuration) =>
-                            configuration
-                                .UseDefaultSettings(context.Configuration)
-                                .UseOpenTelemetryTraces()
-                                .WriteToOpenTelemetry()
-                                .WithMaskingPolicy());
+builder.Host.UseSerilog(
+    (context, configuration) =>
+        configuration
+            .UseDefaultSettings(context.Configuration)
+            .UseOpenTelemetryTraces()
+            .WriteToOpenTelemetry()
+            .WithMaskingPolicy()
+);
 // Add services to the container.
 var services = builder.Services;
 services.AddEndpointsApiExplorer();
 services.AddSwaggerGen();
 
-services.AddOpenTelemetry(serviceName,
-                          builder.Configuration.GetSection("OtlpExporterOptions").Bind,
-                          builder => builder.AddNpgsql(),
-                          builder => builder.AddTemplateMetrics());
+services.AddOpenTelemetry(
+    serviceName,
+    builder.Configuration.GetSection("OtlpExporterOptions").Bind,
+    builder => builder.AddNpgsql(),
+    builder => builder.AddTemplateMetrics()
+);
 services
     .AddMvcCore()
     .AddTracing();
 
 services
     .AddRouting(options => options.LowercaseUrls = true)
-    .AddControllers()
-    .AddJsonOptions(options => 
-                        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
+    .AddJsonSerializerOptions();
 
 services.AddHealthChecks();
 services
@@ -60,9 +62,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
-app.UseStaticFiles();
-app.UseAuthorization();
 app.Run();
 
 // For tests accessibility

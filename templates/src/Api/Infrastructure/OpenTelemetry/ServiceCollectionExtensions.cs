@@ -23,7 +23,6 @@ public static class ServiceCollectionExtensions
                 (builder =>
                      {
                          builder
-                             .SetResourceBuilder(ResourceBuilder.CreateDefault().AddService(serviceName))
                              .AddAspNetCoreInstrumentation(o => o.AddDefaultIgnorePatterns())
                              .AddHttpClientInstrumentation()
                              .AddOtlpExporter(configureOtlp);

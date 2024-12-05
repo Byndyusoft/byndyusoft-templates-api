@@ -9,7 +9,6 @@
         public static IServiceCollection AddApplicationServices(this IServiceCollection serviceCollection)
         {
             serviceCollection.AddSingleton<ITemplateService, TemplateService>();
-
             return serviceCollection;
         }
     }
