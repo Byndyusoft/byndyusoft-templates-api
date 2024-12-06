@@ -10,7 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Npgsql;
 using Serilog;
-using Byndyusoft.Template.Api.Extensions;
+using Byndyusoft.Template.Api.Infrastructure.Serialization;
 
 var serviceName = typeof(Program).Assembly.GetName().Name;
 var builder = WebApplication.CreateBuilder(args);

@@ -1,4 +1,4 @@
-﻿namespace Byndyusoft.Template.Api.Extensions
+﻿namespace Byndyusoft.Template.Api.Infrastructure.Serialization
 {
     using System.Text.Json.Serialization;
     using Microsoft.Extensions.DependencyInjection;
@@ -9,8 +9,13 @@
         {
             serviceCollection
                 .AddControllers()
-                .AddJsonOptions(options =>
-                    options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
+                .AddJsonOptions(
+                    options =>
+                        options
+                            .JsonSerializerOptions
+                            .Converters
+                            .Add(new JsonStringEnumConverter())
+                );
             return serviceCollection;
         }
     }

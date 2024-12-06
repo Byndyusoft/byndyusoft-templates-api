@@ -19,24 +19,27 @@ public static class ServiceCollectionExtensions
         services
             .AddOpenTelemetry()
             .ConfigureResource(resource => resource.AddService(serviceName))
-            .WithTracing
-                (builder =>
-                     {
-                         builder
-                             .AddAspNetCoreInstrumentation(o => o.AddDefaultIgnorePatterns())
-                             .AddHttpClientInstrumentation()
-                             .AddOtlpExporter(configureOtlp);
-                         configureBuilder?.Invoke(builder);
-                     })
-            .WithMetrics(builder =>
-                             {
-                                 builder.AddPrometheusExporter()
-                                        .AddRuntimeInstrumentation()
-                                        .AddAspNetCoreInstrumentation()
-                                        .AddHttpClientInstrumentation();
-                                 configureMeter?.Invoke(builder);
-                             });
-
+            .WithTracing(
+                builder =>
+                    {
+                        builder
+                            .AddAspNetCoreInstrumentation(o => o.AddDefaultIgnorePatterns())
+                            .AddHttpClientInstrumentation()
+                            .AddOtlpExporter(configureOtlp);
+                        configureBuilder?.Invoke(builder);
+                    }
+            )
+            .WithMetrics(
+                builder =>
+                    {
+                        builder
+                            .AddPrometheusExporter()
+                            .AddRuntimeInstrumentation()
+                            .AddAspNetCoreInstrumentation()
+                            .AddHttpClientInstrumentation();
+                        configureMeter?.Invoke(builder);
+                    }
+            );
         return services;
     }
 }
