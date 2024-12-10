@@ -23,20 +23,20 @@
             var environmentName = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 
             var configuration = new ConfigurationBuilder()
-                                .AddJsonFile("appsettings.json")
-                                .AddJsonFile($"appsettings.{environmentName}.json", true)
-                                .AddEnvironmentVariables()
-                                .Build();
+                .AddJsonFile("appsettings.json")
+                .AddJsonFile($"appsettings.{environmentName}.json", true)
+                .AddEnvironmentVariables()
+                .Build();
 
 
             return new ServiceCollection()
-                   .AddFluentMigratorCore()
-                   .ConfigureRunner(rb => rb
-                                          .AddPostgres()
-                                          .WithGlobalConnectionString(configuration.GetConnectionString("Main"))
-                                          .ScanIn(typeof(Program).Assembly).For.Migrations())
-                   .AddLogging(lb => lb.AddFluentMigratorConsole())
-                   .BuildServiceProvider(false);
+                .AddFluentMigratorCore()
+                .ConfigureRunner(rb => rb
+                    .AddPostgres()
+                    .WithGlobalConnectionString(configuration.GetConnectionString("Main"))
+                    .ScanIn(typeof(Program).Assembly).For.Migrations())
+                .AddLogging(lb => lb.AddFluentMigratorConsole())
+                .BuildServiceProvider(false);
         }
     }
 }

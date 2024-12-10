@@ -1,5 +1,6 @@
 ﻿namespace Byndyusoft.Template.Api.Infrastructure.Swagger
 {
+    using Asp.Versioning.ApiExplorer;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Mvc.ApiExplorer;
     using Swashbuckle.AspNetCore.SwaggerUI;
@@ -11,15 +12,15 @@
             IApiVersionDescriptionProvider apiVersionDescriptionProvider)
         {
             builder.UseSwagger()
-                   .UseSwaggerUI(options =>
-                   {
-                       foreach (var apiVersionDescription in apiVersionDescriptionProvider.ApiVersionDescriptions)
-                           options.SwaggerEndpoint($"/swagger/{apiVersionDescription.GroupName}/swagger.json", apiVersionDescription.GroupName.ToUpperInvariant());
+                .UseSwaggerUI(options =>
+                {
+                    foreach (var apiVersionDescription in apiVersionDescriptionProvider.ApiVersionDescriptions)
+                        options.SwaggerEndpoint($"/swagger/{apiVersionDescription.GroupName}/swagger.json", apiVersionDescription.GroupName.ToUpperInvariant());
 
-                       options.DisplayRequestDuration();
-                       options.DefaultModelRendering(ModelRendering.Model);
-                       options.DefaultModelExpandDepth(3);
-                   });
+                    options.DisplayRequestDuration();
+                    options.DefaultModelRendering(ModelRendering.Model);
+                    options.DefaultModelExpandDepth(3);
+                });
 
             return builder;
         }
