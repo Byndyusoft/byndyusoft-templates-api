@@ -11,6 +11,7 @@ using Microsoft.Extensions.Hosting;
 using Npgsql;
 using Serilog;
 using Byndyusoft.Template.Api.Infrastructure.Serialization;
+using Byndyusoft.Logging.Builders;
 
 var serviceName = typeof(Program).Assembly.GetName().Name;
 var builder = WebApplication.CreateBuilder(args);
@@ -19,7 +20,7 @@ builder.Host.UseSerilog(
         configuration
             .UseDefaultSettings(context.Configuration)
             .UseOpenTelemetryTraces()
-            .WriteToOpenTelemetry()
+            .WriteToOpenTelemetry(activityEventBuilder: StructuredActivityEventBuilder.Instance)
             .WithMaskingPolicy()
 );
 // Add services to the container.
@@ -35,6 +36,8 @@ services.AddOpenTelemetry(
 );
 services
     .AddMvcCore()
+    .AddProtoBufFormatters()
+    .AddMessagePackFormatters()
     .AddTracing();
 
 services
