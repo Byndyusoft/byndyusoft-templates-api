@@ -23,11 +23,10 @@ builder.Host.UseSerilog(
             .WriteToOpenTelemetry(activityEventBuilder: StructuredActivityEventBuilder.Instance)
             .WithMaskingPolicy()
 );
-// Add services to the container.
+
 var services = builder.Services;
 services.AddEndpointsApiExplorer();
 services.AddSwaggerGen();
-
 services.AddOpenTelemetry(
     serviceName,
     builder.Configuration.GetSection("OtlpExporterOptions").Bind,
@@ -36,14 +35,10 @@ services.AddOpenTelemetry(
 );
 services
     .AddMvcCore()
-    .AddProtoBufFormatters()
-    .AddMessagePackFormatters()
     .AddTracing();
-
 services
     .AddRouting(options => options.LowercaseUrls = true)
     .AddJsonSerializerOptions();
-
 services.AddHealthChecks();
 services
     .AddVersioning()
@@ -58,7 +53,7 @@ app
     .UseOpenTelemetryPrometheusScrapingEndpoint()
     .UseRouting()
     .UseEndpoints(endpoints => endpoints.MapControllers());
-// Configure the HTTP request pipeline.
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
