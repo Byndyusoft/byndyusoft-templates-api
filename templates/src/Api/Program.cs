@@ -11,6 +11,7 @@ using Microsoft.Extensions.Hosting;
 using Npgsql;
 using Serilog;
 using Byndyusoft.Template.Api.Infrastructure.Serialization;
+using Byndyusoft.Logging.Builders;
 
 var serviceName = typeof(Program).Assembly.GetName().Name;
 var builder = WebApplication.CreateBuilder(args);
@@ -19,14 +20,13 @@ builder.Host.UseSerilog(
         configuration
             .UseDefaultSettings(context.Configuration)
             .UseOpenTelemetryTraces()
-            .WriteToOpenTelemetry()
+            .WriteToOpenTelemetry(activityEventBuilder: StructuredActivityEventBuilder.Instance)
             .WithMaskingPolicy()
 );
-// Add services to the container.
+
 var services = builder.Services;
 services.AddEndpointsApiExplorer();
 services.AddSwaggerGen();
-
 services.AddOpenTelemetry(
     serviceName,
     builder.Configuration.GetSection("OtlpExporterOptions").Bind,
@@ -36,11 +36,9 @@ services.AddOpenTelemetry(
 services
     .AddMvcCore()
     .AddTracing();
-
 services
     .AddRouting(options => options.LowercaseUrls = true)
     .AddJsonSerializerOptions();
-
 services.AddHealthChecks();
 services
     .AddVersioning()
@@ -55,7 +53,7 @@ app
     .UseOpenTelemetryPrometheusScrapingEndpoint()
     .UseRouting()
     .UseEndpoints(endpoints => endpoints.MapControllers());
-// Configure the HTTP request pipeline.
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
