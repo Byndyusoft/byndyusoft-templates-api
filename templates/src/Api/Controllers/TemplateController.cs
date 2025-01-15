@@ -3,11 +3,11 @@
     using System.Diagnostics;
     using System.Net;
     using System.Net.Mime;
+    using Asp.Versioning;
     using Contracts.TemplateEntity;
     using Domain.Services.Interfaces;
     using Infrastructure.OpenTelemetry;
     using Microsoft.AspNetCore.Mvc;
-    using Asp.Versioning;
 
     /// <summary>
     ///     Templates API implementation
