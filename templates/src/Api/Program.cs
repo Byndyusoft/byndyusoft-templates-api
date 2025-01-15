@@ -1,8 +1,6 @@
-using Byndyusoft.Logging.Builders;
 using Byndyusoft.Logging.Configuration;
 using Byndyusoft.MaskedSerialization.Serilog.Extensions;
 using Byndyusoft.Template.Api.Infrastructure.OpenTelemetry;
-using Byndyusoft.Template.Api.Infrastructure.Serialization;
 using Byndyusoft.Template.Api.Infrastructure.Swagger;
 using Byndyusoft.Template.Api.Infrastructure.Versioning;
 using Byndyusoft.Template.Api.Installers;
@@ -12,10 +10,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Npgsql;
 using Serilog;
-using Serilog.Configuration;
+using Byndyusoft.Template.Api.Infrastructure.Serialization;
+using Byndyusoft.Logging.Builders;
 
 var serviceName = typeof(Program).Assembly.GetName().Name;
-var serviceVersion = typeof(Program).Assembly.GetName().Version;
 var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseSerilog(
     (context, configuration) =>
@@ -24,8 +22,6 @@ builder.Host.UseSerilog(
             .UseOpenTelemetryTraces()
             .WriteToOpenTelemetry(activityEventBuilder: StructuredActivityEventBuilder.Instance)
             .WithMaskingPolicy()
-            .Enrich.WithPropertyDataAccessor()
-            .Enrich.WithStaticTelemetryItems()
 );
 
 var services = builder.Services;
@@ -44,12 +40,6 @@ services
     .AddRouting(options => options.LowercaseUrls = true)
     .AddJsonSerializerOptions();
 services.AddHealthChecks();
-services
-    .ConfigureStaticTelemetryItemCollector()
-    .WithBuildConfiguration()
-    .WithAspNetCoreEnvironment()
-    .WithServiceName(serviceName)
-    .WithApplicationVersion(serviceVersion.ToString());
 services
     .AddVersioning()
     .AddSwagger();
