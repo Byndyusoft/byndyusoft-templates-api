@@ -18,6 +18,7 @@
 		<PackageReference Include="Byndyusoft.Logging" Version="3.0.1" />
 		<PackageReference Include="Byndyusoft.Logging.OpenTelemetry" Version="3.0.1" />
 		<PackageReference Include="Byndyusoft.MaskedSerialization.Serilog" Version="3.0.0" />
+		<PackageReference Include="Byndyusoft.Telemetry.Logging.Serilog" Version="0.0.4" />
 		<PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.4" />
 		<PackageReference Include="Npgsql.OpenTelemetry" Version="9.0.2" />
 		<PackageReference Include="OpenTelemetry" Version="1.10.0" />
