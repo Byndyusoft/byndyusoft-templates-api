@@ -1,6 +1,7 @@
 ﻿namespace Byndyusoft.Template.Api.Infrastructure.OpenTelemetry;
 
 using System;
+using Execution.Metrics;
 using global::OpenTelemetry.Exporter;
 using global::OpenTelemetry.Metrics;
 using global::OpenTelemetry.Resources;
@@ -35,7 +36,7 @@ public static class ServiceCollectionExtensions
                         builder
                             .AddPrometheusExporter()
                             .AddRuntimeInstrumentation()
-                            .AddAspNetCoreInstrumentation()
+                            .AddHttpRequestExecutionDurationInstrumentation(o => o.AddDefaultIgnorePatterns())
                             .AddHttpClientInstrumentation();
                         configureMeter?.Invoke(builder);
                     }
