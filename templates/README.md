@@ -61,6 +61,10 @@ Example:
 }
 ```
 
+## AspNet Metrics
+
+AspNet metrics format is described in [Byndyusoft.Execution.Metrics](https://github.com/Byndyusoft/Byndyusoft.Execution.Metrics) Readme file.
+
 ## General folders layout
 
 ### src

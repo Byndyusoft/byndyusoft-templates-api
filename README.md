@@ -9,6 +9,7 @@
  - Пакет для маскирования чувствительных данных в логах и в трассировке [Byndyusoft.MaskedSerialization](https://github.com/Byndyusoft/Byndyusoft.MaskedSerialization)
  - Хэлчеки через метод /healthz
  - Подключены OpenTelemetry Tracing & Metrics. Добавлены основные инструменты для метрик. Добавлен пример для метрик приложения.
+ - Подключены метрики AspNet [Byndyusoft.Execution.Metrics](https://github.com/Byndyusoft/Byndyusoft.Execution.Metrics)
 
 Проекты:
 - Domain - бизнес-логика приложения
